@@ -114,6 +114,19 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  /* モバイル横スクロール完全防止 */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  /* 全ての要素の最大幅制限 */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /* カスタムスタイル */
