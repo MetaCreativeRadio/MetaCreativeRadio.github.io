@@ -100,18 +100,18 @@ const HomePage = () => {
                       {latestEpisode.description}
                     </p>
                     <div className="flex flex-wrap gap-4">
-                      {latestEpisode.links?.apple && (
-                        <Button className="creative-button english-text" asChild>
-                          <a href={latestEpisode.links.apple} target="_blank" rel="noopener noreferrer">
-                            Apple Podcasts
-                            <ExternalLink className="w-4 h-4 ml-2" />
-                          </a>
-                        </Button>
-                      )}
                       {latestEpisode.links?.spotify && (
                         <Button className="creative-button english-text" asChild>
                           <a href={latestEpisode.links.spotify} target="_blank" rel="noopener noreferrer">
                             Spotify
+                            <ExternalLink className="w-4 h-4 ml-2" />
+                          </a>
+                        </Button>
+                      )}
+                      {latestEpisode.links?.apple && (
+                        <Button className="creative-button english-text" asChild>
+                          <a href={latestEpisode.links.apple} target="_blank" rel="noopener noreferrer">
+                            Apple Podcasts
                             <ExternalLink className="w-4 h-4 ml-2" />
                           </a>
                         </Button>

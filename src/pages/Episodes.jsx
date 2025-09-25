@@ -74,18 +74,6 @@ const Episodes = () => {
                         </div>
                         <p className="mb-6 leading-relaxed">{episode.description}</p>
                         <div className="flex flex-wrap gap-4">
-                          {episode.links.apple && (
-                            <Button
-                              className="creative-button english-text"
-                              asChild
-                            >
-                              <a href={episode.links.apple} target="_blank" rel="noopener noreferrer">
-                                <Play className="w-4 h-4 mr-2" />
-                                Apple Podcasts
-                                <ExternalLink className="w-4 h-4 ml-2" />
-                              </a>
-                            </Button>
-                          )}
                           {episode.links.spotify && (
                             <Button
                               className="creative-button english-text"
@@ -94,6 +82,18 @@ const Episodes = () => {
                               <a href={episode.links.spotify} target="_blank" rel="noopener noreferrer">
                                 <Play className="w-4 h-4 mr-2" />
                                 Spotify
+                                <ExternalLink className="w-4 h-4 ml-2" />
+                              </a>
+                            </Button>
+                          )}
+                          {episode.links.apple && (
+                            <Button
+                              className="creative-button english-text"
+                              asChild
+                            >
+                              <a href={episode.links.apple} target="_blank" rel="noopener noreferrer">
+                                <Play className="w-4 h-4 mr-2" />
+                                Apple Podcasts
                                 <ExternalLink className="w-4 h-4 ml-2" />
                               </a>
                             </Button>
