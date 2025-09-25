@@ -1,0 +1,15 @@
+{
+  "feedUrl": "https://anchor.fm/s/1098f2014/podcast/rss",
+  "lastUpdated": "2025-09-25T07:49:00.529Z",
+  "podcastInfo": {
+    "title": "メタクリラジオ",
+    "description": "タムカイ・おぴたんのメタクリエイティブ・レイディオ、通称「メタクリラジオ」\nこの番組は、いわゆる「クリエイティブ」を仕事にしてきた、おぴたんとタムカイが、これまでの人生で磨いてきたアンテナと感性とルサンチマンを総動員して、「これからクリエイティブ」についてメタに考え、もがき、遊ぶ、実験ラジオショーです\n\n📻毎週月曜午前更新",
+    "link": "https://podcasters.spotify.com/pod/show/metacreativeradio",
+    "language": "ja"
+  },
+  "settings": {
+    "autoUpdate": true,
+    "checkInterval": 3600000,
+    "maxEpisodesPerUpdate": 10
+  }
+}

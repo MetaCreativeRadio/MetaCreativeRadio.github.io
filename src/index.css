@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* Manus バッジを非表示 */
+[data-manus-badge] {
+  display: none !important;
+}
+
+/* その他のManus関連要素も非表示 */
+.manus-badge,
+.manus-watermark,
+[class*="manus"],
+[id*="manus"] {
+  display: none !important;
+}
+
+/* 全体にフォントを適用 */
+* {
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', sans-serif !important;
+}
+
+html {
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', sans-serif !important;
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, span, button, input, textarea, label, a {
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', sans-serif !important;
+}
+
+.english-text {
+  font-family: 'Anton', 'Impact', 'Arial Black', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.strong-gothic {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif !important;
+  font-weight: 900 !important;
+}
+
