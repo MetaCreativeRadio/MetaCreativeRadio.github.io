@@ -11,4 +11,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // GitHub Pages用の設定
+  base: '/MetacreativeRadioWeb/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  }
 })
