@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   // GitHub Pages用の設定
-  base: '/MetacreativeRadioWeb/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
