@@ -115,17 +115,22 @@
     @apply border-border outline-ring/50;
   }
 
-  /* モバイル横スクロール完全防止 */
+  /* 横スクロール防止（全デバイス共通） */
   html, body {
     overflow-x: hidden;
-    max-width: 100vw;
-    width: 100%;
   }
 
-  /* 全ての要素の最大幅制限 */
+  /* 基本的なbox-sizingのみ適用 */
   * {
-    max-width: 100%;
     box-sizing: border-box;
+  }
+
+  /* モバイルでのみ幅制限を適用 */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
   }
 }
 
