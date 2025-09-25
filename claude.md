@@ -23,25 +23,39 @@
    - Producer's Noteセクションのグリッドレイアウト
    - 視認性向上（コントラスト改善）
 
-3. **基本ページ構成**
-   - トップページ（HomePage.jsx）
-   - Producer Notesページ
+3. **GitHub Organization & 公開サイト（2025/09/25完了）**
+   - GitHub Organization「MetaCreativeRadio」作成
+   - リポジトリ移管完了
+   - GitHub Pages自動デプロイ設定
+   - 公開サイト稼働中: https://metacreativeradio.github.io/
+   - RSS エピソード管理システム実装
+   - 編集後記システム実装
+
+4. **RSS自動化システム**
+   - エピソードRSS自動取得・更新機能
+   - 編集後記RSS自動取得・更新機能
+   - Spotify個別エピソードURL自動抽出
+   - 差分更新機能（重複防止）
+
+5. **基本ページ構成**
+   - トップページ（HomePage.jsx）- 最新コンテンツ動的表示
+   - Episodes一覧ページ - RSS連携
+   - Producer Notesページ - 編集後記一覧
    - 基本レイアウトコンポーネント
 
-### 🚧 実装予定
-1. **エピソード管理システム**
-   - 動的エピソードデータの実装
-   - エピソード追加スクリプトの活用
-   - 各話ページの自動生成
+### 🚧 次回実装予定
+1. **チーム管理体制**
+   - おぴたん・大里PをOrganizationに招待
+   - 権限設定・役割分担
+   - チーム作業フローの確立
 
-2. **GitHub運用**
-   - GitHub Pages デプロイ設定
-   - 協働ワークフローの確立
-   - 運用マニュアル作成
+2. **大里PのRSS連携**
+   - 専用RSS Feed準備完了後の実装
+   - 自動更新機能の本格運用
 
-3. **コンテンツ拡充**
-   - Manusからのデータ移行
-   - エピソードページテンプレート
+3. **運用マニュアル整備**
+   - Claude Code活用チーム運用ガイド
+   - エラー対応マニュアル
 
 ### 📁 重要なファイル構成
 ```
@@ -153,9 +167,10 @@ npm run handover
 - [2025/09/21 - GitHub移行戦略](../consultation/discussions/2025-09/21-podcast-github-migration.md)
 
 ### 外部リンク
-- 現行サイト: https://j6h5i7cg8op1.manus.space/
-- GitHub: [未設定]
-- デプロイURL: [未設定]
+- 公式サイト: https://metacreativeradio.github.io/
+- GitHub Organization: https://github.com/MetaCreativeRadio
+- GitHub Repository: https://github.com/MetaCreativeRadio/MetaCreativeRadio.github.io
+- 旧Manusサイト: https://j6h5i7cg8op1.manus.space/
 
 ## 検証済み機能
 ✅ React アプリケーション動作
@@ -166,6 +181,38 @@ npm run handover
 ✅ Producer's Note レイアウト
 
 ---
-**更新日**: 2025-09-24
-**最終更新**: claude.md作成・プロジェクト状況整理
+**更新日**: 2025-09-25
+**最終更新**: GitHub Organization設立・サイト公開完了・RSS自動化システム実装
 **作成者**: tamkai + Claude Code
+
+## 🎯 次回セッションでやること
+
+### High Priority（必須）
+1. **チームメンバー招待**
+   - おぴたん・大里PをGitHub Organizationに招待
+   - 権限設定（Admin/Write権限）
+   - 初回チーム作業テスト
+
+2. **大里PのRSS本格実装**
+   - RSS Feed URL確認・設定
+   - 自動更新テスト実行
+   - `npm run setup-editorial-feed` コマンド実行
+
+3. **チーム運用マニュアル作成**
+   - Claude Code活用ガイド作成
+   - よくあるエラー対応集
+   - 日常的な更新手順
+
+### Medium Priority（推奨）
+- サイトデザイン調整・改善
+- エピソード管理の運用テスト
+- SEO対策検討
+
+### 今日の大きな成果 🎉
+- ✅ GitHub Organization「MetaCreativeRadio」設立
+- ✅ 公開サイト完成: https://metacreativeradio.github.io/
+- ✅ RSS自動化システム完成
+- ✅ GitHub Actions自動デプロイ成功
+- ✅ チーム協働体制の土台完成
+
+**チーム全員でのサイト運用準備完了！**
