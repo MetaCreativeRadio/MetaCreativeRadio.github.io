@@ -110,6 +110,18 @@ const Episodes = () => {
                               </a>
                             </Button>
                           )}
+                          {episode.links.amazon && (
+                            <Button
+                              className="creative-button english-text"
+                              asChild
+                            >
+                              <a href={episode.links.amazon} target="_blank" rel="noopener noreferrer">
+                                <Play className="w-4 h-4 mr-2" />
+                                Amazon
+                                <ExternalLink className="w-4 h-4 ml-2" />
+                              </a>
+                            </Button>
+                          )}
                         </div>
                       </div>
                     </div>

@@ -124,6 +124,14 @@ const HomePage = () => {
                           </a>
                         </Button>
                       )}
+                      {latestEpisode.links?.amazon && (
+                        <Button className="creative-button english-text" asChild>
+                          <a href={latestEpisode.links.amazon} target="_blank" rel="noopener noreferrer">
+                            Amazon
+                            <ExternalLink className="w-4 h-4 ml-2" />
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>
