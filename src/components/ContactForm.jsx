@@ -29,7 +29,9 @@ const ContactForm = () => {
     setSubmitStatus(null)
 
     try {
-      const response = await fetch('/api/contact', {
+      // Formspreeを使用（要設定）
+      // 下記URLは設定後に有効なFormspree URLに変更してください
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,14 +39,12 @@ const ContactForm = () => {
         body: JSON.stringify(formData)
       })
 
-      const result = await response.json()
-
       if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', message: '' })
       } else {
         setSubmitStatus('error')
-        console.error('Form submission error:', result.error)
+        console.error('Form submission failed')
       }
     } catch (error) {
       setSubmitStatus('error')
@@ -55,7 +55,7 @@ const ContactForm = () => {
   }
 
   return (
-    <Card className="max-w-2xl mx-auto hover-bounce">
+    <Card className="max-w-2xl mx-auto">
       <CardHeader className="text-center">
         <Mail className="w-16 h-16 mx-auto mb-4 text-primary" />
         <CardTitle className="text-2xl font-bold graffiti-text">
