@@ -180,12 +180,74 @@ npm run handover
 ✅ プロフィール画像表示
 ✅ Producer's Note レイアウト
 
+## 📊 自動化スケジュール
+
+### RSS自動更新
+- **エピソード更新**: 毎週月曜 9:15 JST
+- **編集後記更新**: 毎日 12:00 JST
+- **手動実行**: GitHub Actions画面からワンクリック実行可能
+
+### 次回自動実行予定
+- **次回エピソード更新**: 2025年10月6日（月）9:15
+- **次回編集後記チェック**: 2025年9月30日（月）12:00
+
+## 🔧 重要なコマンド
+
+### 手動更新（緊急時）
+```bash
+# エピソードのみ更新
+npm run update-episodes
+
+# 編集後記のみ更新
+npm run update-editorial
+
+# サイトに反映
+git add . && git commit -m "Manual update" && git push
+```
+
+### 開発・運用
+```bash
+# 開発サーバー起動
+npm run dev
+
+# ビルド
+npm run build
+
+# 引き継ぎスクリプト
+npm run handover
+```
+
 ---
-**更新日**: 2025-09-25
-**最終更新**: GitHub Organization設立・サイト公開完了・RSS自動化システム実装
+**更新日**: 2025-09-29
+**最終更新**: RSS完全自動化・Formspree統合・第2話対応・SNSリンク追加
 **作成者**: tamkai + Claude Code
 
-## 🎯 次回セッションでやること
+## 🎯 本日完了した追加機能（2025-09-29）
+
+### ✅ RSS自動更新システム完成
+1. **GitHub Actions自動化**
+   - 毎週月曜9:15 JST：エピソード自動更新
+   - 毎日12:00 JST：編集後記自動チェック
+   - 手動実行も可能（GitHub Actions画面から）
+
+2. **第2話完全対応**
+   - タイトル：「つくる」を振り返ってみつけた、速さと楽しさの変化
+   - Apple Podcasts URL追加
+   - Amazon Music URL追加
+   - 全プラットフォーム対応完了
+
+### ✅ UI/UX改善
+1. **質問・リクエストフォーム最適化**
+   - hover bounce効果削除（テキスト入力しやすく）
+   - Formspree統合完了（Form ID: movkeevv）
+   - 完全機能するお問い合わせシステム
+
+2. **Host Profiles強化**
+   - opiのTwitter/Xリンク追加（https://x.com/opi）
+   - tamkaiのTwitter/Xリンク追加（https://x.com/tamkai）
+   - クリックで新しいタブで開く
+
+### 🎯 次回セッションでやること
 
 ### High Priority（必須）
 1. **チームメンバー招待**
@@ -193,22 +255,24 @@ npm run handover
    - 権限設定（Admin/Write権限）
    - 初回チーム作業テスト
 
-2. **大里PのRSS本格実装**
-   - RSS Feed URL確認・設定
-   - 自動更新テスト実行
-   - `npm run setup-editorial-feed` コマンド実行
-
-3. **チーム運用マニュアル作成**
+2. **運用マニュアル作成**
    - Claude Code活用ガイド作成
    - よくあるエラー対応集
-   - 日常的な更新手順
+   - 日常的な更新手順（自動化完了により簡素化）
 
 ### Medium Priority（推奨）
 - サイトデザイン調整・改善
-- エピソード管理の運用テスト
 - SEO対策検討
+- YouTube動画対応検討
 
-### 今日の大きな成果 🎉
+### 🎉 2025-09-29 追加完了機能
+- ✅ **RSS完全自動化**: GitHub Actions週次・日次スケジュール実装
+- ✅ **第2話完全対応**: 全プラットフォームURL設定完了
+- ✅ **Formspree統合**: 完全機能するお問い合わせフォーム
+- ✅ **Host Profiles強化**: Twitter/X直接リンク機能
+- ✅ **UI改善**: テキスト入力最適化（hover効果削除）
+
+### 累積完了機能 🎉
 - ✅ GitHub Organization「MetaCreativeRadio」設立
 - ✅ 公開サイト完成: https://metacreativeradio.github.io/
 - ✅ RSS自動化システム完成
@@ -219,11 +283,9 @@ npm run handover
 - ✅ Apple Podcasts URL追加（第1話）
 - ✅ Spotifyボタン優先表示
 - ✅ 大里P公式RSS Feed運用開始
-
-### 追加で完了した改善 📱
 - ✅ **レスポンシブ対応**: スマホ横スクロール問題解決、PC表示維持
 - ✅ **Favicon完全対応**: ブラウザ互換性向上、GitHub Pages表示確認
 - ✅ **プラットフォーム最適化**: Spotify優先、Apple Podcasts追加
 - ✅ **RSS完全自動化**: 大里P編集後記の自動更新システム稼働
 
-**完全運用体制が整いました！チーム全員での協働準備完了！**
+**🚀 完全自動運用体制が整いました！チーム協働＋完全自動化完了！**
