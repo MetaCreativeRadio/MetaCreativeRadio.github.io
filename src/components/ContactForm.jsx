@@ -29,9 +29,8 @@ const ContactForm = () => {
     setSubmitStatus(null)
 
     try {
-      // Formspreeを使用（要設定）
-      // 下記URLは設定後に有効なFormspree URLに変更してください
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      // Formspreeを使用
+      const response = await fetch('https://formspree.io/f/movkeevv', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
