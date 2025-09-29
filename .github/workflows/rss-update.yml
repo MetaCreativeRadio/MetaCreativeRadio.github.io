@@ -1,0 +1,104 @@
+name: RSS Auto Update
+
+on:
+  schedule:
+    # 毎週月曜日 9:15 JST (00:15 UTC)にエピソード更新
+    - cron: '15 0 * * 1'
+    # 毎日12:00 JST (03:00 UTC)に編集後記更新
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      update_type:
+        description: 'Update type'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+        - episodes
+        - editorial
+        - both
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "rss-update"
+  cancel-in-progress: false
+
+jobs:
+  update-rss:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Update Episodes (Monday 9:15 or manual)
+        if: ${{ (github.event.schedule == '15 0 * * 1') || (github.event.inputs.update_type == 'episodes') || (github.event.inputs.update_type == 'both') }}
+        run: |
+          echo "🎙️ Updating episodes..."
+          npm run update-episodes
+
+      - name: Update Editorial (Daily 12:00 or manual)
+        if: ${{ (github.event.schedule == '0 3 * * *') || (github.event.inputs.update_type == 'editorial') || (github.event.inputs.update_type == 'both') }}
+        run: |
+          echo "📝 Updating editorial..."
+          npm run update-editorial
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "📭 No changes detected"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "📬 Changes detected"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+          git commit -m "🤖 Auto-update RSS feeds $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+
+      - name: Build site (if changes)
+        if: steps.check_changes.outputs.changes == 'true'
+        run: npm run build
+
+      - name: Setup Pages (if changes)
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact (if changes)
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    if: needs.update-rss.outputs.changes == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: update-rss
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
