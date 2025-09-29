@@ -172,7 +172,12 @@ const HomePage = () => {
                   </p>
                 </div>
                 <div className="mt-6">
-                  <Button variant="outline" size="sm" className="english-text">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="english-text"
+                    onClick={() => window.open('https://x.com/opi', '_blank')}
+                  >
                     <Twitter className="w-4 h-4 mr-2" />
                     @opi
                   </Button>
@@ -200,7 +205,12 @@ const HomePage = () => {
                   </p>
                 </div>
                 <div className="mt-6">
-                  <Button variant="outline" size="sm" className="english-text">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="english-text"
+                    onClick={() => window.open('https://x.com/tamkai', '_blank')}
+                  >
                     <Twitter className="w-4 h-4 mr-2" />
                     @tamkai
                   </Button>
