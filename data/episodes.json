@@ -184,7 +184,7 @@
     "thumbnail": "/src/assets/episode_thumbnail_sample.png",
     "links": {
       "apple": "",
-      "spotify": "",
+      "spotify": "https://open.spotify.com/episode/3orQalYHsoCW2534jdJUnb?si=B5VkwUGIRTWCcSjzdrxKlA",
       "youtube": ""
     },
     "status": "published",
