@@ -44,7 +44,8 @@ const saveEpisodesData = (episodes) => {
 
 // GUIDからSpotify Episode IDへの変換マッピング
 const GUID_TO_SPOTIFY_ID = {
-  '0d95e25e-a5cc-43fc-ac75-83acb9f186ca': '1RZpNgFirisOtCtvHiva7k' // 第1回エピソード
+  '0d95e25e-a5cc-43fc-ac75-83acb9f186ca': '1RZpNgFirisOtCtvHiva7k', // 第1回エピソード
+  '976ed734-129f-4fb5-a876-30e083887a20': '3orQalYHsoCW2534jdJUnb'  // 第2回エピソード
 }
 
 // RSS FeedからSpotify URLを推定（メタデータやリンクから）
