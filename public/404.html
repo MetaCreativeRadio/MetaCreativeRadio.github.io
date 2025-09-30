@@ -32,13 +32,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>タムカイ、おぴたんのメタクリエイティブラジオ | 公式サイト</title>
     <script>
-      // GitHub Pages SPA リダイレクト復元処理
-      // 404.htmlから保存されたパスを復元
+      // GitHub Pages SPA リダイレクト処理
+      // 404ページでアクセスされたURLをindex.htmlにリダイレクトし、
+      // React Routerがルーティングを処理できるようにする
       (function() {
-        var redirectPath = sessionStorage.getItem('redirectPath');
-        if (redirectPath) {
-          sessionStorage.removeItem('redirectPath');
-          history.replaceState(null, null, redirectPath);
+        var path = window.location.pathname;
+        // ルートパス以外の場合、sessionStorageにパスを保存してindex.htmlにリダイレクト
+        if (path && path !== '/') {
+          sessionStorage.setItem('redirectPath', path + window.location.search + window.location.hash);
+          window.location.replace('/');
         }
       })();
     </script>
