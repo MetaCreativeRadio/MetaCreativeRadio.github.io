@@ -244,7 +244,7 @@ const HomePage = () => {
                 <div className="md:col-span-3">
                   <h3 className="text-xl font-bold mb-4">大里Pの編集後記</h3>
                   <p className="text-muted-foreground mb-6">
-                    元大手出版社から大手SaaSに転職したばかりの大里Pが、毎回番組収録後の気づきやトピックをNOTEにまとめています。
+                    出版社・デジタルエージェンシーを経て事業会社に転職したばかりの大里Pが、毎回番組収録後の気づきやトピックをnoteにまとめています。
                   </p>
                   {latestEditorialNote ? (
                     <div className="border-l-4 border-primary pl-6 mb-6">
