@@ -73,7 +73,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/
+          git add data/ public/data/
           git commit -m "🤖 Auto-update RSS feeds $(date '+%Y-%m-%d %H:%M:%S')"
           git push
 
