@@ -30,6 +30,8 @@ concurrency:
 jobs:
   update-rss:
     runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.check_changes.outputs.changes }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
