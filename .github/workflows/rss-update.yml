@@ -47,11 +47,13 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Update Episodes (Monday 9:15 or manual)
-        if: ${{ (github.event.schedule == '15 0 * * 1') || (github.event.inputs.update_type == 'episodes') || (github.event.inputs.update_type == 'both') }}
+      - name: Update Episodes (Monday 9:30 or manual)
+        if: ${{ (github.event.schedule == '30 0 * * 1') || (github.event.inputs.update_type == 'episodes') || (github.event.inputs.update_type == 'both') }}
         run: |
           echo "🎙️ Updating episodes..."
           npm run update-episodes
+          echo "🍎 Updating Apple Podcasts URLs..."
+          npm run update-apple-urls
 
       - name: Update Editorial (Daily 12:00 or manual)
         if: ${{ (github.event.schedule == '0 3 * * *') || (github.event.inputs.update_type == 'editorial') || (github.event.inputs.update_type == 'both') }}

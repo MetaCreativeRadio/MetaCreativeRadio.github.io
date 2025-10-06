@@ -12,6 +12,7 @@
     "fetch-episode": "node scripts/fetch-spotify-episode.js",
     "setup-feed": "node scripts/rss-episode-updater.js setup-feed",
     "update-episodes": "node scripts/rss-episode-updater.js update",
+    "update-apple-urls": "node scripts/apple-podcast-updater.js",
     "setup-editorial-feed": "node scripts/editorial-rss-updater.js setup-editorial-feed",
     "update-editorial": "node scripts/editorial-rss-updater.js update",
     "handover": "bash scripts/handover.sh"
