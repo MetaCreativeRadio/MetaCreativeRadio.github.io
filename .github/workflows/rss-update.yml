@@ -2,8 +2,8 @@ name: RSS Auto Update
 
 on:
   schedule:
-    # 毎週月曜日 9:15 JST (00:15 UTC)にエピソード更新
-    - cron: '15 0 * * 1'
+    # 毎週月曜日 9:30 JST (00:30 UTC)にエピソード更新
+    - cron: '30 0 * * 1'
     # 毎日12:00 JST (03:00 UTC)に編集後記更新
     - cron: '0 3 * * *'
   workflow_dispatch:
