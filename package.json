@@ -15,7 +15,8 @@
     "update-apple-urls": "node scripts/apple-podcast-updater.js",
     "setup-editorial-feed": "node scripts/editorial-rss-updater.js setup-editorial-feed",
     "update-editorial": "node scripts/editorial-rss-updater.js update",
-    "handover": "bash scripts/handover.sh"
+    "handover": "bash scripts/handover.sh",
+    "agent": "node ../consultation/scripts/multi-agent.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
