@@ -142,6 +142,16 @@ const HomePage = () => {
               <p>エピソード情報を読み込み中...</p>
             </div>
           )}
+
+          {/* 過去の配信へのリンク */}
+          <div className="text-center mt-8">
+            <Button className="creative-button english-text" size="lg" asChild>
+              <Link to="/episodes">
+                過去の配信を見る
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
