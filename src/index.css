@@ -22,6 +22,13 @@
   box-sizing: border-box;
 }
 
+/* ルート要素の横スクロール完全防止 */
+#root {
+  overflow-x: hidden !important;
+  width: 100vw;
+  max-width: 100vw;
+}
+
 /* 横スクロール防止（モバイル特化） */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -32,18 +39,78 @@
   body {
     position: relative;
     width: 100vw;
+    overflow-x: hidden !important;
+  }
+
+  /* すべての要素を完全に制限 */
+  * {
+    max-width: 100vw !important;
   }
 
   /* はみ出る可能性のある要素のみ制限 */
   img, video, iframe, pre, code {
     max-width: 100% !important;
+    width: 100% !important;
     height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* 長いテキストの折り返し強制 */
+  p, h1, h2, h3, h4, h5, h6, div, span {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* URLの強制折り返し（最も強力な設定） */
+  a {
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    hyphens: auto !important;
+  }
+
+  /* コンテナの幅を確実に制限 */
+  .container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* モバイルでのセクション余白統一 */
+  section, header {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* カード内のコンテンツも制限 */
+  [class*="card"],
+  [class*="Card"] {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* すべての子要素のマージン・パディングをリセット */
+  section > *, header > *, .container > *, [class*="Card"] > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
 }
 
 html {
   font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', sans-serif !important;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -51,10 +118,27 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6, p, div, span, button, input, textarea, label, a {
   font-family: 'M PLUS Rounded 1c', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', sans-serif !important;
+}
+
+/* すべての主要要素に幅制限 */
+section, header, footer, main, article, aside, nav {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* モバイルでのセクション余白統一 */
+@media (max-width: 768px) {
+  section, header {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 .english-text {

@@ -40,31 +40,32 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#E8DCC6' }}>
+    <div className="min-h-screen overflow-x-hidden w-full" style={{ backgroundColor: '#E8DCC6', maxWidth: '100vw', position: 'relative' }}>
       <Navigation />
 
       {/* ヘッダー */}
-      <header className="py-8 px-4">
-        <div className="container mx-auto text-center">
+      <header className="py-8 px-4 overflow-hidden">
+        <div className="container mx-auto text-center overflow-hidden">
           <img
             src={mainLogo}
             alt="タムカイ、おぴたんのメタクリエイティブラジオ"
             className="mx-auto max-w-md w-full h-auto hover-bounce"
+            style={{ maxWidth: '100%', height: 'auto' }}
           />
         </div>
       </header>
 
       {/* ファーストビュー */}
-      <section className="py-12 px-4 text-center spray-effect">
-        <div className="container mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold strong-gothic text-gray-800 mb-8">
+      <section className="py-12 px-4 text-center spray-effect overflow-hidden">
+        <div className="container mx-auto overflow-hidden">
+          <h1 className="text-4xl md:text-6xl font-bold strong-gothic text-gray-800 mb-8 break-words">
             これからの<br />クリエイティブを<br />メタな視点で語ろう
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 english-text">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 english-text break-words">
             毎週月曜AM更新 | 30-40分
           </p>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg leading-relaxed text-left">
+          <div className="max-w-3xl mx-auto overflow-hidden">
+            <p className="text-lg leading-relaxed text-left break-words">
               タムカイ・おぴたんのメタクリエイティブ・レイディオ、通称「メタクリラジオ」<br />
               この番組は、いわゆる「クリエイティブ」を仕事にしてきた、元NAKEDで空間演出が得意なおぴたんこと大屋友紀雄と株式会社AFFLATUS代表/富士通株式会社デザインフェローでラクガキライフコーチのタムカイことタムラカイが、これまでの人生で磨いてきたアンテナと感性とルサンチマンを総動員して、「これからクリエイティブ」についてメタに考え、もがき、遊ぶ、実験ラジオショーです
             </p>
@@ -73,15 +74,15 @@ const HomePage = () => {
       </section>
 
       {/* 最新エピソード */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
+      <section className="py-16 px-4 overflow-hidden">
+        <div className="container mx-auto overflow-hidden">
           <h2 className="text-4xl md:text-6xl font-bold graffiti-text text-center mb-12 english-text">
             Latest Episode
           </h2>
           {latestEpisode ? (
-            <Card className="max-w-4xl mx-auto hover-bounce">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
+            <Card className="max-w-4xl mx-auto hover-bounce overflow-hidden">
+              <CardContent className="p-8 overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-8 items-center overflow-hidden">
                   <div>
                     <img
                       src={latestEpisode.thumbnail || episodeThumbnail}
@@ -96,7 +97,7 @@ const HomePage = () => {
                     <p className="text-muted-foreground mb-6">
                       {latestEpisode.date}配信
                     </p>
-                    <p className="mb-8 leading-relaxed">
+                    <p className="mb-8 leading-relaxed break-words overflow-hidden">
                       {latestEpisode.description}
                     </p>
                     <div className="flex flex-wrap gap-4">
