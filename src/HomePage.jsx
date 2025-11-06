@@ -50,7 +50,6 @@ const HomePage = () => {
             src={mainLogo}
             alt="タムカイ、おぴたんのメタクリエイティブラジオ"
             className="mx-auto max-w-md w-full h-auto hover-bounce"
-            style={{ maxWidth: '100%', height: 'auto' }}
           />
         </div>
       </header>

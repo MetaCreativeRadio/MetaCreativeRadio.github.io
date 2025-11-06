@@ -50,9 +50,12 @@
   /* はみ出る可能性のある要素のみ制限 */
   img, video, iframe, pre, code {
     max-width: 100% !important;
-    width: 100% !important;
     height: auto !important;
-    object-fit: contain !important;
+  }
+
+  /* プロフィール画像以外の画像は幅100%に */
+  img:not(.rounded-full) {
+    width: 100% !important;
   }
 
   /* 長いテキストの折り返し強制 */
