@@ -680,6 +680,97 @@ npm run save-research "[概念名]"
 - [research/README.md](research/README.md)
 
 ---
-**更新日**: 2025-10-28
-**最終更新**: 論構文作成システム完成（ラジオ版 + リサーチ版）・スピーカープロフィール完全分析完了
+**更新日**: 2025-11-10
+**最終更新**: 第8話メタクリドキュメント準備完了・UI改善（画像サイズ修正）・第7話リンク修正
 **作成者**: tamkai + Claude Code
+
+## 🎯 本日完了した作業（2025-11-10）
+
+### ✅ 第7話リンク修正
+1. **Spotify URL修正**
+   - 問題: ショーページへのリンクになっていた
+   - 修正: エピソード個別ページへ変更
+   - URL: https://open.spotify.com/episode/3vCgfOLpze5xGnoWbS7cuR?si=eHhlBplJTBSJ9BmRo-AaLw
+
+2. **Amazon Music URL追加**
+   - 第7話にAmazon Podcastボタン追加完了
+   - URL: https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/f74c1419-ede5-4bf8-a5d8-34ccaca1e68a/7非日常で生まれた快適への執念と創造性八丈島台風被災前編
+
+### ✅ UI改善（画像サイズ問題解決）
+
+**問題1: PCでトップロゴが大きすぎる**
+- 原因: インラインスタイル `style={{ maxWidth: '100%' }}` がTailwind `max-w-md` (448px) を上書き
+- 解決: [HomePage.jsx:49-53](src/HomePage.jsx#L49-L53) からインラインスタイル削除
+- 結果: ロゴが適切なサイズ（最大448px）で表示
+
+**問題2: モバイルでプロフィール画像が大きすぎる**
+- 原因: モバイルCSS `img { width: 100% !important }` が全画像に適用
+- 解決: [index.css:50-59](src/index.css#L50-L59) で `:not(.rounded-full)` セレクタ使用
+- 結果: プロフィール画像は128px維持、他の画像はレスポンシブ
+
+### ✅ 第8話メタクリドキュメント準備完了
+
+**エピソード情報**:
+- **タイトル**: 8.台風被災と創造性・後編：備蓄と防災の知恵
+- **音声**: `/Users/tamkai/product/MetaCreativeRadioWeb/audio/メタクリラジオ_第八回_ver1.m4a` (72MB)
+- **文字起こし**: `/Users/tamkai/product/MetaCreativeRadioWeb/transcripts/episode08.txt` (385行)
+- **内容**: 映像制作現場の知見が災害対応に直結／AD時代の経験／料理の段取り論／備蓄の思想／具体的備蓄リスト／冷蔵庫の見切りタイミング／防災グッズ詳細／喫煙者の意外な強み／「一度やってみる」の重要性
+
+**作業完了**:
+1. ✅ スピーカープロフィール更新
+   - [speakers/opi.md:301-316](speakers/opi.md#L301-L316) - Episode 8セクション追加（12項目）
+   - [speakers/tamkai.md:233-251](speakers/tamkai.md#L233-L251) - Episode 8セクション追加（18項目）
+
+2. ✅ バンドルファイル生成
+   - 実行: `npm run prepare-essay 8`
+   - 生成: `/Users/tamkai/product/MetaCreativeRadioWeb/essay-input/episode08-bundle.md`
+   - 内容: プロンプト + スピーカープロフィール + 第8話文字起こし
+
+**次のステップ**（ユーザー実施）:
+1. バンドルファイルをWeb版Claude（Sonnet 4.5）へコピペ
+2. メタクリドキュメント生成
+3. `npm run save-essay 8` で保存
+
+### 📊 現在の状況
+
+**公開済みエピソード**: 8話
+- 第1話〜第7話: Spotify ✅ / Apple Podcasts ✅ / Amazon Music ✅
+- 第8話: 文字起こし完了、メタクリドキュメント準備完了（未公開）
+
+**メタクリドキュメント作成状況**:
+- 第1話〜第7話: ✅ 作成完了
+- 第8話: 🚧 バンドル生成完了（メタクリドキュメント生成待ち）
+
+**スピーカープロフィール**:
+- Opi: 第1話〜第8話の分析完了（316行）
+- Tamkai: 第1話〜第8話の分析完了（251行）
+
+### 🔧 技術的変更点
+
+1. **src/HomePage.jsx** (line 49-53)
+   - インラインスタイル削除でTailwindクラス優先
+
+2. **src/index.css** (line 50-59)
+   - `:not(.rounded-full)` セレクタでプロフィール画像を除外
+
+3. **public/data/episodes.json** (Episode 7)
+   - Spotify URL更新
+   - Amazon Music URL追加
+
+4. **speakers/opi.md** (line 301-316)
+   - 第8話トピック追加
+
+5. **speakers/tamkai.md** (line 233-251)
+   - 第8話リスニング視点追加
+
+### 📝 メタクリドキュメントとは
+
+**従来名称**: 論構文（ronkoubun）
+**新名称**: メタクリドキュメント（meta-creative document）
+
+**構造**: 三層構造
+1. **対話引用層**: ラジオの実際の会話を抽出
+2. **導の文**: メタ認知的な解説・問いかけ
+3. **註釈層**: 深い分析と概念的な洞察
+
+**目的**: ラジオでの自然な対話から、メタ的創造性に関する知見を体系化

@@ -20,6 +20,7 @@
     "save-essay": "bash scripts/save-essay.sh",
     "prepare-research": "bash scripts/prepare-research-essay.sh",
     "save-research": "bash scripts/save-research-essay.sh",
+    "setup-obsidian": "bash scripts/setup-obsidian-vault.sh",
     "handover": "bash scripts/handover.sh",
     "agent": "node ../consultation/scripts/multi-agent.js"
   },
