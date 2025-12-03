@@ -1,352 +1,189 @@
 [
   {
-    "id": 22,
+    "id": 11,
+    "title": "11.「初期衝動」の正体は、溜まった問題意識と欲求の限界突破？",
+    "date": "2025-12-01",
+    "description": "二度寝について／待ち合わせ時間のマインドセット／ロケ集合場所「スバルビル前」／プロデューサーの昼打ち合わせ／コンクリートに横たわる制作陣／ワークライフバランスと一個人の覚悟／「納得」はすべてに優先する／企画書最後の「文責」／AIとのものづくりは「感情のケア」が一切不要／新幹線移動中に管理画面を作成／AIはアナログデジタルの切り替え期を彷彿とさせる／HTMLで震えた経験／初期衝動は問題意識と欲求が溜まった末の「過冷却の水」／「叩き台を作るスキル」はAIに奪われた／修正指示の言葉はハイコンテクスト／正しい漢字よりも「かっこよさ」を優先する教育／企画書の要点「三つ」の根拠は？",
+    "duration": "49:23",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/11-%E5%88%9D%E6%9C%9F%E8%A1%9D%E5%8B%95-%E3%81%AE%E6%AD%A3%E4%BD%93%E3%81%AF-%E6%BA%9C%E3%81%BE%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E6%84%8F%E8%AD%98%E3%81%A8%E6%AC%B2%E6%B1%82%E3%81%AE%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B4/id1842051516?i=1000739051667&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/1ffe745b-dab6-40ff-a710-461e0c0d5844/%E3%83%A1%E3%82%BF%E3%82%AF%E3%83%AA%E3%83%A9%E3%82%B8%E3%82%AA-11-%E3%80%8C%E5%88%9D%E6%9C%9F%E8%A1%9D%E5%8B%95%E3%80%8D%E3%81%AE%E6%AD%A3%E4%BD%93%E3%81%AF%E3%80%81%E6%BA%9C%E3%81%BE%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E6%84%8F%E8%AD%98%E3%81%A8%E6%AC%B2%E6%B1%82%E3%81%AE%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B4%EF%BC%9F"
+    },
+    "status": "published",
+    "rssGuid": "8eff7758-d6e3-4be8-b7d4-c29d96d85481",
+    "publishedAt": "2025-12-01T00:00:00.000Z"
+  },
+  {
+    "id": 10,
+    "title": "10.「彫り出す」ことで見えてくる、創造性の源泉",
+    "date": "2025-11-24",
+    "description": "大里Pへの根掘り葉掘りインタビュー／パーパスカービングのワークショップ／ライフリフレクション／折れ線グラフで人生を振り返る難しさ／キーワードで人生の振り返りをする／パーパス（存在意義・目的意識）とは／カービング（彫刻・掘り出す）の意味／ミケランジェロの言葉／兄弟との比較が生むアイデンティティ／難しい選択肢を選ぶ理由／直感でたどり着いた道を舗装するロジック／グラフィックカタリストの葛藤／触媒ではなく結晶の核／超能動的な受け身の人／幼少期のオカルト壁新聞／原体験マウントを避ける拡張体験",
+    "duration": "49:16",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/10-%E5%BD%AB%E3%82%8A%E5%87%BA%E3%81%99-%E3%81%93%E3%81%A8%E3%81%A7%E8%A6%8B%E3%81%88%E3%81%A6%E3%81%8F%E3%82%8B-%E5%89%B5%E9%80%A0%E6%80%A7%E3%81%AE%E6%BA%90%E6%B3%89/id1842051516?i=1000738046633&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/551d464c-82bc-4aba-9622-eef8a83b5f20/%E3%83%A1%E3%82%BF%E3%82%AF%E3%83%AA%E3%83%A9%E3%82%B8%E3%82%AA-10-%E3%80%8C%E5%BD%AB%E3%82%8A%E5%87%BA%E3%81%99%E3%80%8D%E3%81%93%E3%81%A8%E3%81%A7%E8%A6%8B%E3%81%88%E3%81%A6%E3%81%8F%E3%82%8B%E3%80%81%E5%89%B5%E9%80%A0%E6%80%A7%E3%81%AE%E6%BA%90%E6%B3%89"
+    },
+    "status": "published",
+    "rssGuid": "8f06453e-04ca-4ca4-8742-228a0d725f02",
+    "publishedAt": "2025-11-24T00:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "title": "9.オカルトに始まり、創造に「神性」を見出した狂信者たち",
+    "date": "2025-11-17",
+    "description": "オカルト現象への興味／詐欺の手口と営業理論／手口のリバースエンジニアリング／エロを売る人のあの手この手／「ガバガバ」な言葉と陰謀論／仏教は哲学／ムー編集部「この陰謀論はクオリティが低い」／会議室で真面目にオカルトアイデアソン／ネジ狂信者のように対象に憑依すること／分け入るインタビュー技術／知識の点と点が繋がった時の宗教的体験／資本主義も一つの宗教／我々は創造を崇拝する創造性の狂信者／創造性の起こりは誰かの創造物に心が動いた瞬間",
+    "duration": "46:16",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/9-%E3%82%AA%E3%82%AB%E3%83%AB%E3%83%88%E3%81%AB%E5%A7%8B%E3%81%BE%E3%82%8A-%E5%89%B5%E9%80%A0%E3%81%AB-%E7%A5%9E%E6%80%A7-%E3%82%92%E8%A6%8B%E5%87%BA%E3%81%97%E3%81%9F%E7%8B%82%E4%BF%A1%E8%80%85%E3%81%9F%E3%81%A1/id1842051516?i=1000737011443&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/dbacf707-1de6-4a90-87c0-efa09aaafd2f/9オカルトに始まり創造に神性を見出した狂信者たち"
+    },
+    "status": "published",
+    "rssGuid": "ccadbcf5-2019-4e60-899e-bc691ef86eac",
+    "publishedAt": "2025-11-17T00:00:00.000Z"
+  },
+  {
+    "id": 8,
+    "title": "8.「備蓄」から紐解くクリエイターの生活ロジック：八丈島台風被災後編",
+    "date": "2025-11-10",
+    "description": "『グッドモーニング、ベトナム』／CM現場のケータリングポスト／映像制作現場のサバイバル力／予測不能を織り込むロジック／仕事の論理が家庭に入ってくる問題／パックご飯の優先順位／「今欲しい」へのこだわり／ジャストインタイムのトヨタ方式と在庫志向の衝突／備蓄の場所問題（ストレージ部屋）／ライターと火種不足／冷蔵庫の中の見切り方／家庭用冷凍庫と業務用の温度差／業務用の氷機への憧れ（QOL）／乾電池の優先順位（単三・単一）／サランラップは百均不可論\n\n\n・このポッドキャストは2025年10月17日に収録されたものです。内容につきまして、当時段階での情報（伝聞も含む）に基づいています。最新の被災情報については、改めて八丈町WEBサイトなどをご覧ください\n⁠https://www.town.hachijo.tokyo.jp/index.html⁠\n\n\nOpiたんのXでの発信『絶賛被災中の僕が、それでも「災害映像を撮れなかった」理由』2025.10.24のポスト\n⁠https://x.com/Opi/status/1981656491590602948⁠\nそれに続く2025.10.30のポスト\n⁠https://x.com/Opi/status/1983902779421954066",
+    "duration": "40:10",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/8-%E5%82%99%E8%93%84-%E3%81%8B%E3%82%89%E7%B4%90%E8%A7%A3%E3%81%8F%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E3%81%AE%E7%94%9F%E6%B4%BB%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF-%E5%85%AB%E4%B8%88%E5%B3%B6%E5%8F%B0%E9%A2%A8%E8%A2%AB%E7%81%BD%E5%BE%8C%E7%B7%A8/id1842051516?i=1000736019705&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/079b3cd5-afef-412a-a121-22ced3e96c44/8備蓄から紐解くクリエイターの生活ロジック八丈島台風被災後編"
+    },
+    "status": "published",
+    "rssGuid": "234194d9-3a74-4c67-bda6-bc1f2d7b11dc",
+    "publishedAt": "2025-11-10T00:00:00.000Z"
+  },
+  {
+    "id": 7,
+    "title": "7.非日常で生まれた「快適への執念」と創造性：八丈島台風被災前編",
+    "date": "2025-11-03",
+    "description": "八丈島への台風直撃（50年ぶり）／インフラ全滅（全島停電・断水）でも死亡者ゼロの備え／ニュースに埋もれる被災地の現状／倒れる電柱と風魔法の力／水源がやられる深刻な被害／災害時の子どもの教育／快適さへの執念が発揮する生活の創意工夫／「知ってる」と「やったことある」の違い／用便水の確保が最優先課題／個人商店のたくましい在庫一掃セール／50Lの漬物樽と雨水利用／落語や人生ゲームが最高のエンタメに／冷凍・見切り品からの献立ハック（豆乳ラーメン）／無駄な知識が役立つ（サバイバル漫画、ベア・グリルス）\n\n\n・このポッドキャストは2025年10月17日に収録されたものです。内容につきまして、当時段階での情報（伝聞も含む）に基づいています。最新の被災情報については、改めて八丈町WEBサイトなどをご覧ください\nhttps://www.town.hachijo.tokyo.jp/index.html\n\n\nOpiたんのXでの発信『絶賛被災中の僕が、それでも「災害映像を撮れなかった」理由』2025.10.24のポスト\nhttps://x.com/Opi/status/1981656491590602948\nそれに続く2025.10.30のポスト\nhttps://x.com/Opi/status/1983902779421954066",
+    "duration": "41:20",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/7-%E9%9D%9E%E6%97%A5%E5%B8%B8%E3%81%A7%E7%94%9F%E3%81%BE%E3%82%8C%E3%81%9F-%E5%BF%AB%E9%81%A9%E3%81%B8%E3%81%AE%E5%9F%B7%E5%BF%B5-%E3%81%A8%E5%89%B5%E9%80%A0%E6%80%A7-%E5%85%AB%E4%B8%88%E5%B3%B6%E5%8F%B0%E9%A2%A8%E8%A2%AB%E7%81%BD%E5%89%8D%E7%B7%A8/id1842051516?i=1000734934390&uo=4",
+      "spotify": "https://open.spotify.com/episode/3vCgfOLpze5xGnoWbS7cuR?si=eHhlBplJTBSJ9BmRo-AaLw",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/f74c1419-ede5-4bf8-a5d8-34ccaca1e68a/7非日常で生まれた快適への執念と創造性八丈島台風被災前編"
+    },
+    "status": "published",
+    "rssGuid": "aa7de02e-46ef-4cda-af79-10b571eb30c5",
+    "publishedAt": "2025-11-03T00:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "title": "6.主語と視点と言語化と、そして「純子の朝」",
+    "date": "2025-10-27",
+    "description": "今週のポエム／大喜利の「おもしろい」と「興味深い」／ヘッドフォンと視点の類似性／FPSとTPS、日本人の嗜好／日本語の一人称視点と主語の省略／編集者が困る主語の曖昧さ／曲紹介「純子の朝」／タムカイが避けたかったもの／レンズ効果がもたらす視点と感動／「高いところ、キラキラ、透明」／感覚的な表現の言語化の難しさ／電話での丸投げ、文章化の重要性／グラレコは同時通訳／シウマイ弁当とワンカップ大関の儀式",
+    "duration": "41:26",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/6-%E4%B8%BB%E8%AA%9E%E3%81%A8%E8%A6%96%E7%82%B9%E3%81%A8%E8%A8%80%E8%AA%9E%E5%8C%96%E3%81%A8-%E3%81%9D%E3%81%97%E3%81%A6-%E7%B4%94%E5%AD%90%E3%81%AE%E6%9C%9D/id1842051516?i=1000733609921&uo=4",
+      "spotify": "https://open.spotify.com/episode/1REayjWwp4KkCCEva6JiyG",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/e89a8cde-a377-4122-a89d-a53e0dcef2d0/6主語と視点と言語化とそして純子の朝"
+    },
+    "status": "published",
+    "rssGuid": "d1ff56c3-e218-4ac5-93f1-99ce154a1ba8",
+    "publishedAt": "2025-10-27T00:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "title": "5.「ゲーム」なのか人生なのか、嗜好と視点の違い",
+    "date": "2025-10-20",
+    "description": "ヘッドホンへの戸惑い／デスストは本格派おつかいゲー／絶景で流れる音楽がたまらん／「爆笑」のコンテクスト／エンタの神様のほどよいつまらなさ／任天堂育ちはオープンワールドで狼藉の限りを尽くす？／マリオカートは速くなくていい／生理的欲求に忠実すぎる？／理性のゲームと本能のゲーム／スキルの成長を確認するための縛りプレイ／言語によって視点が変わる／BGM選びは難しい／フリー音源の曲紹介やってみた",
+    "duration": "37:40",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/5-%E3%82%B2%E3%83%BC%E3%83%A0-%E3%81%AA%E3%81%AE%E3%81%8B%E4%BA%BA%E7%94%9F%E3%81%AA%E3%81%AE%E3%81%8B-%E5%97%9C%E5%A5%BD%E3%81%A8%E8%A6%96%E7%82%B9%E3%81%AE%E9%81%95%E3%81%84/id1842051516?i=1000732574305&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/c21f0ef4-09cb-4422-847d-41fd7ea9c5c5/5ゲームなのか人生なのか嗜好と視点の違い"
+    },
+    "status": "published",
+    "rssGuid": "1821c7a0-e5f1-4727-a2c3-31c6ae1282a4",
+    "publishedAt": "2025-10-20T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "title": "4.「生活」の中にもある、創造性の発露",
+    "date": "2025-10-13",
+    "description": "始まったら終わるだけ／お手紙みたいな編集後記／PTAの広報誌／「スマホでGoogleスライド」は厳しい／役割分担と権限委譲／運動会は島を挙げた祭り／「餅まきの餅」の失敗できなさ／検索能力の差／AIを使いこなすには日本語を操る能力が重要／書き直せない手紙のよさ／子育てと創造性の発揮／子どもの性格形成／「生活の中でいちいち本気にならないで」／いいコピー用紙が大量に入っている引き出し／終わらせ方ってむずかしい",
+    "duration": "39:16",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/4-%E7%94%9F%E6%B4%BB-%E3%81%AE%E4%B8%AD%E3%81%AB%E3%82%82%E3%81%82%E3%82%8B-%E5%89%B5%E9%80%A0%E6%80%A7%E3%81%AE%E7%99%BA%E9%9C%B2/id1842051516?i=1000731511857&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/0c9d8df8-fc82-4fd9-ac1c-206d88e17ae3/4生活の中にもある創造性の発露"
+    },
+    "status": "published",
+    "rssGuid": "eb852453-e9b1-49d6-b7c4-77cfc8c34bf8",
+    "publishedAt": "2025-10-13T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "title": "3.「味わい方」が変わってもそこにある、覚悟と不安とエトセトラ",
+    "date": "2025-10-06",
+    "description": "「お前が始めた物語だろ」／プレイリストの意図／コンテンツと自己は不可分だった／「推し」とは距離感が一定／かつて存在した音楽鑑賞という儀式／「音楽様」のBGM化／好きなものからの逃れられなさ／個性はつい出ちゃうもの／味わって真似をすることが創造への一歩／「これでいく」と決める覚悟／自分自身を投げ込んでつくるときの不安／でもやるしかないのである／アベフトシのカッティング／フリー音源の曲紹介やろう",
+    "duration": "44:14",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/3-%E5%91%B3%E3%82%8F%E3%81%84%E6%96%B9-%E3%81%8C%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%A6%E3%82%82%E3%81%9D%E3%81%93%E3%81%AB%E3%81%82%E3%82%8B-%E8%A6%9A%E6%82%9F%E3%81%A8%E4%B8%8D%E5%AE%89%E3%81%A8%E3%82%A8%E3%83%88%E3%82%BB%E3%83%88%E3%83%A9/id1842051516?i=1000730319993&uo=4",
+      "spotify": "https://open.spotify.com/show/3tFQXyb09WD5WQMxFWKn0U",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/dce11e24-7d5c-4fec-85e4-cec883736e27/%E3%83%A1%E3%82%BF%E3%82%AF%E3%83%AA%E3%83%A9%E3%82%B8%E3%82%AA-3-%E3%80%8C%E5%91%B3%E3%82%8F%E3%81%84%E6%96%B9%E3%80%8D%E3%81%8C%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%A6%E3%82%82%E3%81%9D%E3%81%93%E3%81%AB%E3%81%82%E3%82%8B%E3%80%81%E8%A6%9A%E6%82%9F%E3%81%A8%E4%B8%8D%E5%AE%89%E3%81%A8%E3%82%A8%E3%83%88%E3%82%BB%E3%83%88%E3%83%A9"
+    },
+    "status": "published",
+    "rssGuid": "a42663ca-def8-489d-915d-4c2b7ed6eccd",
+    "publishedAt": "2025-10-06T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "2.「つくる」を振り返ってみつけた、速さと楽しさの変化",
+    "date": "2025-09-29",
+    "description": "いつもメタ視点になっちゃう／メタクリエイティブええやん／ワークショップの参加者側になっちゃった時の振る舞い／キャップカットいい／まだAIにポエムは書かせたくない／2案ずつみせがち／ライブでみているのはLED／初体験＝ライブ？ 生身の身体性？／ロボットの演劇と人形浄瑠璃の境界／幻の企画「ジョー＆ルリー」／AIで速さの次元が変わった／広がりすぎると価値が下がる／最近MSPゴシックが好き／人はなぜポップ体を使ってしまうのか？／体感がないと覚悟が決まらない／発想から完成が短くなってつくる面白さが爆増した",
+    "duration": "42:50",
+    "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
+    "links": {
+      "apple": "https://podcasts.apple.com/us/podcast/2-%E3%81%A4%E3%81%8F%E3%82%8B-%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%A4%E3%81%91%E3%81%9F-%E9%80%9F%E3%81%95%E3%81%A8%E6%A5%BD%E3%81%97%E3%81%95%E3%81%AE%E5%A4%89%E5%8C%96/id1842051516?i=1000728953091&uo=4",
+      "spotify": "https://open.spotify.com/episode/3orQalYHsoCW2534jdJUnb?si=B5VkwUGIRTWCcSjzdrxKlA",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/509b5734-574c-491a-93d1-0802d752bcd4/%E3%83%A1%E3%82%BF%E3%82%AF%E3%83%AA%E3%83%A9%E3%82%B8%E3%82%AA-2-%E3%80%8C%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%8D%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%A4%E3%81%91%E3%81%9F%E3%80%81%E9%80%9F%E3%81%95%E3%81%A8%E6%A5%BD%E3%81%97%E3%81%95%E3%81%AE%E5%A4%89%E5%8C%96"
+    },
+    "status": "published",
+    "rssGuid": "976ed734-129f-4fb5-a876-30e083887a20",
+    "publishedAt": "2025-09-29T00:00:00.000Z"
+  },
+  {
+    "id": 1,
     "title": "1.「自己紹介」について考えることから始めてみた",
     "date": "2025-09-22",
     "description": "■今週のテーマ\nYoutuberの「そんなわけで」／自己紹介むずかしい／「メタ」クリエイティブ？／ストレングスファインダーの「戦略性」／若者プロフィール盛る問題／肩書よりつかみ／実績が必要な機会は意外と少ない／ラジオと寿司は似てる／8席のグルーブ感／職業病で全開のトークを出せない／「ちょっとよくなればいいな」の思いつきと実行／クリエイターの現実は締め切りに追われている姿／檻の外から緊張感を楽しむラジオ？",
     "duration": "40:25",
     "thumbnail": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/44453421/44453421-1758350411232-9d58c44c89829.jpg",
     "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
+      "apple": "https://podcasts.apple.com/us/podcast/1-%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%BF%E3%81%9F/id1842051516?i=1000728353929&uo=4",
+      "spotify": "https://open.spotify.com/episode/1RZpNgFirisOtCtvHiva7k",
+      "youtube": "",
+      "amazon": "https://music.amazon.co.jp/podcasts/0b61adb0-4ff9-40d5-9bd9-88b834536c04/episodes/705919e7-563a-45ba-ae62-8f05f7d678ee/1自己紹介について考えることから始めてみた"
     },
     "status": "published",
     "rssGuid": "0d95e25e-a5cc-43fc-ac75-83acb9f186ca",
     "publishedAt": "2025-09-22T00:00:00.000Z"
-  },
-  {
-    "id": 12,
-    "title": "Rest In Peace Charlie Kirk | Episode 123",
-    "date": "2025-09-11",
-    "description": "On the anniversary of 9/11, we look at Charlie Kirk's life and all the good he's done as well as the political environment in America that got us here. \n\n\n\nNews Picks:\n\nCharlie Kirk noting assassination culture on the left months ago\n\nhttps://x.com/charliekirk11/status/1909391943802703899\n\n\n\nGhoulish Dems, liberals are blaming Trump, Charlie Kirk for his own assassination — as MSNBC analyst is fired over comments\n\nhttps://nypost.com/2025/09/10/us-news/ghoulish-dems-liberals-are-blaming-charlie-kirk-for-his-own-assassination/\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "df93fdaa-cc5d-11ef-89b3-2fbb36b00057",
-    "publishedAt": "2025-09-11T15:33:00.000Z"
-  },
-  {
-    "id": 13,
-    "title": "Biden Jobs Reports Were Found Fake, AGAIN | Episode 122",
-    "date": "2025-09-10",
-    "description": "A new report finds need for another half million downward revision in the jobs report proving President Trump right again. More video on the train stabbing is shocking.\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠ https://rumble.com/vince⁠⁠\n\nNews Picks:\n\nJustice Department Charges Light Rail Attacker with Federal Crime\n\nhttps://www.justice.gov/opa/pr/justice-department-charges-light-rail-attacker-federal-crime\n\n\n\nMeet the worst transit terrors in NYC with more than 5,000 busts between them — and most still roaming streets\n\nhttps://nypost.com/2025/09/07/us-news/meet-the-worst-transit-terrors-on-loose-in-nyc/\n\n\n\nThe U.S. created 911,000 fewer jobs than previously thought in the 12 months through March\n\nhttps://www.nbcnews.com/business/economy/911000-fewer-jobs-created-april-2024-march-2025-bls-says-rcna230065\n\n\n\nSponsors:\n\nHelix Sleep - https://helixsleep.com/Vince\n\nAmerican Financing - https://AmericanFinancing.net/Vince\n\nBoll & Branch - https://bollandbranch.com/Vince\n\nJacked Up Fitness - https://Getjackedup.com Code: Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "df7d0a3c-cc5d-11ef-89b3-fb7b12527ddc",
-    "publishedAt": "2025-09-10T15:43:00.000Z"
-  },
-  {
-    "id": 14,
-    "title": "BREAKING: Trump Goes To 'War' In Chicago | Episode 121",
-    "date": "2025-09-09",
-    "description": "President Trump has sent ICE to Chicago and 'Operation Midway Blitz' is underway. Also another alleged Trump letter to Epstein surfaces.\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠ https://rumble.com/vince⁠\n\n\n\nTrump admin launches ‘Operation Midway Blitz’ in push to target illegal immigrants, fight violent crime in Chicago\n\nhttps://nypost.com/2025/09/08/us-news/trump-admin-launches-operation-midway-blitz-in-push-to-fight-crime-and-target-illegal-immigrants-in-chicago/\n\nSupreme Court Lifts Restrictions on L.A. Immigration Stops\n\nhttps://www.nytimes.com/2025/09/08/us/politics/supreme-court-los-angeles-immigration.html?smtyp=cur&smid=tw-nytimes\n\nEpstein Birthday Letter With Trump’s Signature Revealed\n\nhttps://www.wsj.com/us-news/law/epstein-birthday-book-congress-9d79ab34\n\n\n\nSponsors:\n\nAmerican Financing - https://AmericanFinancing.net/Vince\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\n\nBirch Gold - Text VINCE to the number 989898\n\nBrickHouse Nutrition - https://takelean.com code: Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "df37cf58-cc5d-11ef-89b3-6f00131ee834",
-    "publishedAt": "2025-09-09T16:10:00.000Z"
-  },
-  {
-    "id": 15,
-    "title": "Nightmare In North Carolina |  Episode 120",
-    "date": "2025-09-08",
-    "description": "The failures of the Justice System are exposed after an innocent woman's murder; Trump lights up social media with his latest announcement, and Speaker Mike Johnson stuns everyone.\n\n\n\nSuspect Behind Fatal North Carolina Train Stabbing of Ukrainian Refugee Arrested, Charged with Murder\n\nhttps://www.breitbart.com/local/2025/09/06/suspect-behind-fatal-north-carolina-train-stabbing-arrested-charged-with-murder/\n\n\n\nOMB: Trump’s Economic Agenda Will Cut Deficit by Half Over the Next 10 Years\n\nhttps://www.foxbusiness.com/politics/omb-forecast-trumps-economic-agenda-cut-deficit-half-over-next-10-years\n\n\n\nSenators Introduce Legislation to End Cashless Bail in D.C., Nationwide\n\nhttps://justthenews.com/nation/states/center-square/legislation-end-cashless-bail-dc-nationwide-introduced-senate\n\n\n\nSponsors:\n\nHillsdale - https://hillsdale.edu/Vince\n\nJacked Up Fitness - https://Getjackedup.com Code: Vince\n\nHome Title Lock - “Use promo code VINCE at https://hometitlelock.com/vince for a FREE title history report and a FREE trial of their Million Dollar Triple Lock Protection.”\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "df209d6a-cc5d-11ef-89b3-6f7bf538360b",
-    "publishedAt": "2025-09-08T15:23:00.000Z"
-  },
-  {
-    "id": 16,
-    "title": "RFKage Match! Kennedy Destroys Corrupt Senators In Wild Hearing | Episode 119",
-    "date": "2025-09-05",
-    "description": "RFK Jr.'s congressional hearing goes viral for all the right reasons; DOD officially becomes the Department of War, and Trump's crime crackdown pays off.\n\n\n\nTrump’s Approval Rating Hits Record High Amid Aggressive Crackdown on Crime\n\nhttps://thenationalpulse.com/2025/09/04/trumps-approval-rating-hits-new-high-amid-aggressive-crime-crackdown/\n\n\n\nTrump Admin Scraps Deportation Protections for Venezuelans, Says They Are “Not in America’s Best Interest”\n\nhttps://dailycaller.com/2025/09/04/dhs-ends-tps-for-venezuelan-migrants/\n\nUK Prime Minister Starmer Admits He Wouldn’t Want a Migrant Hotel Near Family’s Home\n\nhttps://www.breitbart.com/politics/2025/09/03/uk-prime-minister-starmer-admits-he-wouldnt-want-a-migrant-hotel-near-his-familys-home/\n\n\n\nSponsors:\n\nExpress VPN - https://expressvpn.com/vince\n\nAmerican Financing - https://AmericanFinancing.net/Vince\n\nFast Growing Trees - https://fastgrowingtrees.com Code: Vince\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "dedb760e-cc5d-11ef-89b3-2b783b2120bd",
-    "publishedAt": "2025-09-05T15:42:00.000Z"
-  },
-  {
-    "id": 17,
-    "title": "Epstein Victims Have Come Forth, The Names Have Not | Episode 118",
-    "date": "2025-09-04",
-    "description": "Epstein victims have come out of the woodworks to get behind a microphone and claim they have names that they won't tell us yet. Also: after a drug mule boat is annihilated from the skies by the President, the left finds themselves defending terrorists.\n\n\n\nAlleged Epstein VICTIMS, Lawmakers Push For FULL Release Of Files On Capitol Hill\n\nhttps://thehill.com/video/alleged-epstein-victims-lawmakers-push-for-full-release-of-files-on-capitol-hill-sunrise/11043313/\n\n\n\nA Few Republicans Help Tank Effort To Censure Dem Who Allegedly Assaulted ICE Officers\n\nhttps://dailycaller.com/2025/09/03/lamonica-mciver-censure-effort-fails-five-republicans/\n\n\n\nBREAKING: Trump’s $2 Billion Harvard Freeze Struck Down By Obama-Appointed Judge\n\nhttps://dailycaller.com/2025/09/03/breaking-trumps-2-billion-harvard-freeze-struck-down-by-obama-appointed-judge/\n\n\n\nSponsors:\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\n\nPatriot Mobile - https://Patriotmobile.com/Vince\n\nBirch Gold - Text VINCE to the number 989898\n\nJacked Up Fitness - https://Getjackedup.com Code: Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "dec52ff2-cc5d-11ef-89b3-3ba434dc603f",
-    "publishedAt": "2025-09-04T15:33:00.000Z"
-  },
-  {
-    "id": 18,
-    "title": "The Left's Demented Fantasies Shatter | Episode 117",
-    "date": "2025-09-03",
-    "description": "President Trump hosted a news conference in which he made an important Space Force announcement but also provided the sick left, who were wishing his death, proof of life.  Also: another trove of Epstein files are released.\n\n\n\nBowser to provide indefinite coordination with federal law enforcement\n\n⁠⁠https://www.washingtonpost.com/politics/2025/09/02/bowser-dc-federal-law-enforcement-trump-takeover/⁠⁠\n\n\n\nAs many as 100 Epstein victims will attend Washington rally Wednesday⁠⁠⁠\n\n⁠https://www.miamiherald.com/news/politics-government/article311942734.html⁠⁠\n\n\n\nTrump Says U.S. Attacked Boat Carrying Venezuelan Gang Members, Killing 11⁠⁠⁠\n\n⁠https://www.nytimes.com/2025/09/02/us/politics/trump-venezuela-boat-drugs-attack.html⁠⁠\n\n\n\nSponsors:\n\nBeam Organics - ⁠⁠https://shopbeam.com/VINCESHOW⁠⁠ code: Vinceshow\n\nBon Charge - ⁠⁠https://boncharge.com⁠⁠ and use code: Vince\n\nBlackout Coffee - ⁠⁠https://BlackoutCoffee.com/Vince⁠⁠\n\nBrickHouse Nutrition - ⁠⁠https://brickhousenutrition.com⁠⁠ code: labor25\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "dead6516-cc5d-11ef-89b3-7bbb99bb2da7",
-    "publishedAt": "2025-09-03T15:44:00.000Z"
-  },
-  {
-    "id": 19,
-    "title": "Shockwaves in the Swamp Over Trump's Latest Move | Episode 116",
-    "date": "2025-09-02",
-    "description": "President Trump and RFK have taken aim at the oversusage of vaccines with the intent of trimming the excess fat within the industry. Also: Daily Caller's Reagan Reese sits down for an exclusive interview with President Trump.\n\n\n\nEXCLUSIVE: Full Transcript: Daily Caller Interviews President Donald Trump\n\nhttps://dailycaller.com/2025/09/01/donald-trump-reagan-reese-daily-caller-interview-full-transcript/\n\n\n\nStock trading, Jeffrey Epstein and a shutdown: Why this could be a tricky fall for Congress\n\nhttps://www.politico.com/news/2025/09/02/congress-returns-shutdown-epstein-00537489\n\n\n\nThe Sex Recession: The Share of Americans Having Regular Sex Keeps Dropping\n\nhttps://ifstudies.org/blog/the-sex-recession-the-share-of-americans-having-regular-sex-keeps-dropping\n\n\n\nSponsors:\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\n\nExpress VPN - https://expressvpn.com/vince\n\nJacked Up Fitness - https://Getjackedup.com Code: Vince\n\nHelix Sleep - https://helixsleep.com/Vince\n\nBoll & Branch - https://bollandbranch.com/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "de9519de-cc5d-11ef-89b3-a34f1b5b6401",
-    "publishedAt": "2025-09-02T15:26:00.000Z"
-  },
-  {
-    "id": 20,
-    "title": "How To Deprogram A Liberal (w/ Matt Van Swol) | Episode 115",
-    "date": "2025-09-01",
-    "description": "On this Labor Day Special, Matt Van Swol and his wife Erin Derham join the show to discuss their radical transformation from staunch liberal to truth seeking conservative. Make sure to catch a new live show tomorrow, Tuesday 09/02. \n\nCheck out the full video show at rumble.com/VINCE\n\n\n\nFollow Matt on X\n\nhttps://x.com/matt_vanswol\n\nFollow Erin on X\n\nhttps://x.com/HistoryBoutique\n\nTom Homan says Trump administration has located 23,000 of the 300,000 migrant children lost under Biden administrationhttp://theblaze.com/news/homan-300k-missing-biden-children\n\nAfter Days of Claiming Trump was Dead, Leftists Get a Nasty Shockhttps://pjmedia.com/robert-spencer/2025/08/30/after-days-of-claiming-trump-was-dead-leftists-get-a-nasty-shock-n4943193\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "de458d4c-cc5d-11ef-89b3-37259220ea8d",
-    "publishedAt": "2025-09-01T14:28:00.000Z"
-  },
-  {
-    "id": 21,
-    "title": "Gavin Newsom Is A Major Trump Fan | Episode 114",
-    "date": "2025-08-29",
-    "description": "Gavin Newsom has made his play for the White House pretty apparent, but he is doing so in a strange way. Also: the White House has confronted the attack on prayer in full force as JD Vance and other members of the admin openly endorse prayer and condemn the attacks against it\n\n\n\n\n\nKaroline Leavitt Takes Jen Psaki To Task Over Her Attack On Prayer Following Tragic Catholic School Shooting\n\nhttps://dailycaller.com/2025/08/28/karoline-leavitt-jen-psakis-prayer-comments-school-shooting/\n\n\n\n‘I Regret Being Trans’ — Minneapolis School Shooter Expressed Desire To Detransition Ahead Of Attack\n\nhttps://dailycaller.com/2025/08/28/minneapolis-school-shooter-detransition-shooting/\n\n\n\nDemocrats Are Reportedly Paying $8K A Month To Rent Fake Friends Online\n\nhttps://dailycaller.com/2025/08/28/report-dark-money-group-allegedly-bankrolling-liberal-social-media-influencers-in-secret/\n\n\n\nSponsors:\n\nHome Title Lock - https://hometitlelock.com/vince Code: Vince\n\nBirch Gold - Text VINCE to the number 989898\n\nFatty 15 - https://Fatty15.com/Vince\n\nAmerican Financing - https://AmericanFinancing.net/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "85dbc5ea-cc5d-11ef-b706-ab1da2ef3fa9",
-    "publishedAt": "2025-08-29T16:18:00.000Z"
-  },
-  {
-    "id": 2,
-    "title": "Did The Globalists SABOTAGE Trump At The U.N.? | Episode 132",
-    "date": "2025-09-24",
-    "description": "Trump rallies through multiple disruptions to rip the U.N. globalists apart; The Secret Service foils a hidden plot for mass telecom attacks; Trump's would-be assassin is found guilty.\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠https://rumble.com/vince⁠⁠⁠⁠⁠\n\n\n\nSecret Service foils massive plot to cripple NYC cell network and threaten UN General Assembly\n\n⁠https://nypost.com/2025/09/23/us-news/secret-service-foils-plot-to-disrupt-nyc-cell-network-threaten-un-general-assembly/⁠\n\n\n\nJury Finds Ryan Routh Guilty Of Attempting To Assassinate President Trump\n\n⁠https://dailycaller.com/2025/09/23/jury-finds-ryan-routh-guilty-of-attempting-to-assassinate-president-trump/⁠\n\n\n\nGoogle Reverses Course In Victory For Creators Banned From YouTube Over Political Speech\n\n⁠https://dailycaller.com/2025/09/23/google-reverses-in-victory-on-youtube-ban-for-political-speech/⁠\n\n\n\nSponsors:\n\nBeam Organics - ⁠https://shopbeam.com/VINCESHOW⁠ code: Vinceshow\n\nFatty 15 - ⁠https://Fatty15.com/Vince⁠\n\nBirch Gold - Text VINCE to the number 989898\n\nAmerican Financing - ⁠https://AmericanFinancing.net/Vince⁠\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "https://open.spotify.com/episode/3orQalYHsoCW2534jdJUnb?si=B5VkwUGIRTWCcSjzdrxKlA",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e0da49c6-cc5d-11ef-89b3-a3f0ef1f961f",
-    "publishedAt": "2025-09-24T15:29:00.000Z"
-  },
-  {
-    "id": 3,
-    "title": "Disney Caves To The Woke Mob | Episode 131",
-    "date": "2025-09-23",
-    "description": "Kimmel is returning to air under uncertain circumstances; The White House announces a effort against the rise of autism; Kamala thinks American voters are bigoted\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠https://rumble.com/vince⁠⁠⁠⁠⁠\n\nDisney Announces Jimmy Kimmel Will Be Returning To Late Night After All\n\nhttps://dailycaller.com/2025/09/22/disney-jimmy-kimmel-return-charlie-kirk/\n\nTrump Unveils Results Of Autism Study\n\nhttps://dailycaller.com/2025/09/22/trump-unveils-results-of-autism-study/\n\n‘What Are You Doing?’: CNN’s Harry Enten Sounds Alarm For Democrats In Midterms\n\nhttps://dailycaller.com/2025/09/22/what-are-you-doing-cnns-harry-enten-sounds-alarm-for-democrats-in-midterms/\n\nSponsors:\n\nAmerican Financing - https://AmericanFinancing.net/Vince\n\nFast Growing Trees - https://fastgrowingtrees.com Code: Vince\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\n\nFatty 15 - https://Fatty15.com/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e09390d0-cc5d-11ef-89b3-13e560d6aef5",
-    "publishedAt": "2025-09-23T15:34:00.000Z"
-  },
-  {
-    "id": 4,
-    "title": "Are We Witnessing A Revival? | Episode 130",
-    "date": "2025-09-22",
-    "description": "Charlie Kirk's memorial fills a football stadium; Trump makes a critical announcement; and the American conservative movement enters a new era.\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠https://rumble.com/vince\n\n\n\nTrump Demands Venezuela Take Back Prisoners From U.S.\n\nhttps://townhall.com/tipsheet/scott-mcclallen/2025/09/20/trump-demands-venezuela-to-take-back-prisoners-n2663691\n\n\n\n1 Dead, Multiple Injured in Shooting at New Hampshire Country Club Wedding - Suspect Shouted \"Free Palestine\"\n\nhttps://nypost.com/2025/09/21/us-news/alleged-new-hampshire-country-club-gunman-hunter-nadeau-charged-after-shooting-leaves-1-dead-multiple-injured/\n\n\n\nTrump Criticizes Bondi in Deleted Post\n\nhttps://www.foxnews.com/politics/trump-pressures-bondi-prosecute-adversaries-now-deleted-social-media-post-theyre-all-guilty-hell\n\n\n\n⁠⁠⁠⁠⁠Sponsors:\n\nBrickHouse Nutrition - https://takelean.com code: Vince\n\nPatriot Mobile - https://Patriotmobile.com/Vince\n\nFatty 15 - https://Fatty15.com/Vince\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e07edb86-cc5d-11ef-89b3-630e6a857e62",
-    "publishedAt": "2025-09-22T15:51:00.000Z"
-  },
-  {
-    "id": 5,
-    "title": "SPECIAL: Lyin’ Jimmy Kimmel Faces The Music - Nightly Scroll w/ Hayley Caronia",
-    "date": "2025-09-20",
-    "description": "Watch HAYLEY CARONIA on https://rumble.com/hayley\n\n\n\nLIVE Weekdays at 6PM ET\n\n\n\nIn this episode of Nightly Scroll: Libs react to Jimmy Kimmel’s indefinite suspension from ABC, Kamala snubs Tampon Tim, Scott Bryson joins for his “Tactical Detail” segment & more\n\n\n\nFollow Hayley @hayleycaronia on on X, IG, TikTok & Truth Social\n\n\n\nSponsors:\n\nGenucel - https://genucel.com/scroll\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e068e83a-cc5d-11ef-89b3-cb9867bd2026",
-    "publishedAt": "2025-09-20T14:00:00.000Z"
-  },
-  {
-    "id": 6,
-    "title": "Trump Is Finding The Missing Children | Episode 129",
-    "date": "2025-09-19",
-    "description": "The Trump admin. reveals the number of sex trafficking victims they've saved; the meltdown over Jimmy Kimmel continues, and was Buttigieg too gay for Kamala?\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠⁠https://rumble.com/vince⁠\n\n\n\nNews Picks:\n\nEXCLUSIVE: Here Are The Worst Criminals ICE Arrested In One Day\n\n⁠https://dailycaller.com/2025/09/18/exclusive-worst-criminals-arrested-ice-dhs-kristi-noem-tom-homan/⁠\n\n\n\nInside Disney’s Abrupt Decision to Suspend Jimmy Kimmel’s Show\n\n⁠https://www.wsj.com/business/media/jimmy-kimmel-decision-behind-the-scenes-e1ecbbf2⁠\n\n\n\nKamala Harris reveals her ‘first choice’ for running mate wasn’t Tim Walz: book\n\n⁠https://nypost.com/2025/09/18/us-news/kamala-harris-reveals-her-first-choice-for-running-mate-wasnt-tim-walz-book/⁠\n\n\n\nSponsors:\n\nExpress VPN - ⁠expressvpn.com/VINCE⁠\n\nBeam - ⁠shopbeam.com/VINCESHOW⁠ use code VinceShow\n\nJacked Up Fitness - GetJackdUp.com/VINCE\n\nBrickhouse Nutrition - ⁠takelean.com⁠ use code VINCE\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e0516a98-cc5d-11ef-89b3-a3a5db7b7da9",
-    "publishedAt": "2025-09-19T15:22:00.000Z"
-  },
-  {
-    "id": 7,
-    "title": "The \"Finding Out\" Phase Has Officially Begun | Episode 128",
-    "date": "2025-09-18",
-    "description": "Late-night's Jimmy Kimmel learns the meaning of \"FAFO\"; Antifa to be designated a terror organization; and Democrats embarrass themselves in Congress, again.\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠https://rumble.com/vince⁠⁠⁠⁠⁠\n\nNews Picks:\n\nABC Pulls Liberal Hack Jimmy Kimmel's Show\n\nhttps://www.foxnews.com/media/disney-says-jimmy-kimmels-show-will-be-preempted-indefinitely-following-charlie-kirk-assassin-comments\n\nBomb Threat Made Against TPUSA While Glenn Beck Is There\n\nhttps://www.theblaze.com/news/glenn-beck-goes-live-on-the-charlie-kirk-show-after-bomb-squad-rushes-to-turning-point-usa-hq\n\n\n\nObama Implies Trump to Blame for Charlie Kirk Assassination\n\nhttps://www.breitbart.com/politics/2025/09/17/obama-implies-trump-to-blame-for-charlie-kirk-assassination-extreme-views-were-not-in-my-white-house/\n\n\n\nSponsors:\n\nAmerican Financing - https://AmericanFinancing.com/VINCE\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\n\nBoncharge - https://Boncharge.com use code VINCE\n\nFast Growing Trees - https://FastGrowingTrees.com use code VINCE\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "dfac54ae-cc5d-11ef-89b3-e3207a78f630",
-    "publishedAt": "2025-09-18T15:47:00.000Z"
-  },
-  {
-    "id": 8,
-    "title": "The Left's Lawfare Onslaught REVEALED | Episode 127",
-    "date": "2025-09-17",
-    "description": "FBI Director Kash Patel testifies and reveals years of lawfare attacks on conservatives; Dem Rep. Hirono says the quiet part out loud; and Charlie Kirk's assassin's text messages with trans lover revealed.\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠https://rumble.com/vince\n\n\n\nNews Picks:\n\nFBI ‘Arctic Frost’ probe targeted nearly 100 GOP groups — including Charlie Kirk’s TPUSA: docs\n\nhttps://nypost.com/2025/09/16/us-news/fbi-arctic-frost-probe-targeted-nearly-100-gop-groups-including-charlie-kirks-tpusa-docs/\n\n\n\nProsecutors Reveal Chilling Text Messages Between Alleged Kirk Assassin And His Trans Loverhttps://dailycaller.com/2025/09/16/alleged-charlie-kirk-assassin-charged-utah-court/\n\n\n\n‘My God!’: Cory Booker Blows Top When Kash Patel Says His Rant ‘Does Not Bring This Country Together’\n\nhttps://dailycaller.com/2025/09/16/cory-booker-kash-patel-rant-judiciary-committee/\n\n\n\nSponsors:\n\nAmerican Financing - AmericanFinancing.net/VINCE\n\nPatriot Mobile - PatriotMobile.com/VINCE\n\nBoncharge - Boncharge.com use code VINCE\n\nFast Growing Trees - FastGrowingTrees.com use code VINCE\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "dff32b18-cc5d-11ef-89b3-e35385eb8958",
-    "publishedAt": "2025-09-17T15:24:00.000Z"
-  },
-  {
-    "id": 9,
-    "title": "The Left's 'Malignant' Violence Problem | Episode 126",
-    "date": "2025-09-16",
-    "description": "Shocking details surrounding Charlie Kirk’s assassin emerge; VP Vance delivers a moving tribute; and a deep dive into the pro-violence agenda of the globalist left.\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ ⁠https://rumble.com/vince\n\n\n\nNews Picks:\n\n‘It was me’: Suspect in Charlie Kirk shooting appeared to confess in Discord chat\n\nhttps://www.washingtonpost.com/investigations/2025/09/15/charlie-kirk-shooter-suspect-discord-chat/\n\n\n\nKash Patel Says Suspect Told Friend In Group Chat He Was Going To ‘Take Out’ Charlie Kirk\n\nhttps://dailycaller.com/2025/09/15/kash-patel-suspect-charlie-kirk-group-chat/\n\n\n\nEXCLUSIVE: Illegal Immigrant Hits ICE Officer With Car During Florida Arrest, ‘Nearly Crushing Him’\n\nhttps://www.dailywire.com/news/exclusive-illegal-immigrant-hits-ice-officer-with-car-during-florida-arrest-nearly-crushing-him\n\n\n\nSponsors:\n\nBirch Gold - Text VINCE to 989898\n\nBlackout Coffee - BlackoutCoffee.com/VINCE\n\nJacked Up Fitness - GetJackdUp.com/VINCE\n\nBeam - shopbeam.com/VINCESHOW use code VinceShow\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e00afe82-cc5d-11ef-89b3-33e7c5721b67",
-    "publishedAt": "2025-09-16T15:24:00.000Z"
-  },
-  {
-    "id": 10,
-    "title": "A Turning Point In The Culture | Episode 125",
-    "date": "2025-09-15",
-    "description": "The world has mourned Charlie's horrific death, but his death may have also become the turning point.\n\n\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ https://rumble.com/vince⁠⁠⁠⁠\n\n\n\nNews Picks:\n\nAlleged Charlie Kirk Assassin Reportedly Lived With Transgender ‘Partner’\n\nhttps://dailycaller.com/2025/09/13/alleged-charlie-kirk-assassin-transgender-partner/\n\n\n\nMinneapolis shooting was driven by anti-Catholic hatred that the media ignores\n\nhttps://nypost.com/2025/09/14/opinion/minneapolis-shooting-was-driven-by-anti-catholic-hatred-media-ignores/\n\n\n\nUtah Governor: Alleged Charlie Kirk Shooter Not Cooperating with Authorities\n\nhttps://www.breitbart.com/crime/2025/09/14/utah-governor-alleged-charlie-kirk-shooter-not-cooperating-with-authorities/\n\n\n\nSponsors:\n\nExpress VPN - expressvpn.com/VINCE\n\nBeam - shopbeam.com/VINCESHOW use code VinceShow\n\nBrickhouse Nutrition - takelean.com use code VINCE\n\nBlackout Coffee - BlackoutCoffe.com/VINCE\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e022db56-cc5d-11ef-89b3-5351926c5189",
-    "publishedAt": "2025-09-15T15:38:00.000Z"
-  },
-  {
-    "id": 11,
-    "title": "'WE GOT HIM' - Charlie's Killer In Custody | Episode 124",
-    "date": "2025-09-12",
-    "description": "The suspect in Charlie Kirk's assassination has been captured. Is this case closed, or the start of a much bigger investigation?\n\nWatch VINCE Live on Rumble - Mon-Fri 10AM ET ⁠⁠⁠⁠ https://rumble.com/vince⁠⁠⁠⁠\n\n\n\nHe was asking Charlie Kirk a question. Then a shot rang out.\n\nhttps://www.washingtonpost.com/nation/2025/09/11/student-describes-moment-charlie-kirk-was-shot/\n\nTucker Carlson’s ALP Donates $1 Million To Kirk Family, Launches Donation Site\n\nhttps://dailycaller.com/2025/09/11/tucker-carlson-neil-patel-alp-charlie-erika-kirk-family-assassination-donate/\n\n\n\nHeartless Leftists Are Getting Fired Left And Right For Demonizing Charlie Kirk After Death\n\nhttps://dailycaller.com/2025/09/11/charlie-kirk-assassination-leftist-professionals-fired-celebrating-boycott/\n\nSponsors:\n\nBirch Gold - Text VINCE to the number 989898\n\nJacked Up Fitness - https://Getjackedup.com Code: Vince\n\nBeam Organics - https://shopbeam.com/VINCESHOW\n\nBlackout Coffee - https://BlackoutCoffee.com/Vince\nLearn more about your ad choices. Visit podcastchoices.com/adchoices",
-    "duration": "35:00",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "",
-      "spotify": "",
-      "youtube": ""
-    },
-    "status": "published",
-    "rssGuid": "e03a3940-cc5d-11ef-89b3-97bd2e486ca9",
-    "publishedAt": "2025-09-12T15:55:00.000Z"
-  },
-  {
-    "id": 1,
-    "title": "第1回：クリエイティブの未来を語る",
-    "date": "2024-09-12",
-    "description": "記念すべき第1回では、お二人のこれまでの経験を振り返りながら、これからのクリエイティブ業界について熱く語ります。",
-    "duration": "35:42",
-    "thumbnail": "/src/assets/episode_thumbnail_sample.png",
-    "links": {
-      "apple": "https://podcasts.apple.com/...",
-      "spotify": "https://open.spotify.com/...",
-      "youtube": "https://youtube.com/..."
-    },
-    "status": "published"
   }
 ]
