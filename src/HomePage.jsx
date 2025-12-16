@@ -9,7 +9,7 @@ import { Link } from './Router.jsx'
 // 画像のインポート
 import mainLogo from '/src/assets/MetaCreative_Radio.png'
 import oyaProfile from '/src/assets/T02EJJV8DGR-U02EVK1Q8FJ-00771b167d7c-512.png'
-import tamkaiProfile from '/src/assets/tamkai2.PNG'
+import tamkaiProfile from '/src/assets/tamkai2_small.png'
 import episodeThumbnail from '/src/assets/episode_thumbnail_sample.png'
 import osatoProfile from '/src/assets/osato_profile.png'
 
