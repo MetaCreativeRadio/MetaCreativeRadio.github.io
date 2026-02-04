@@ -12,7 +12,7 @@ import path from 'path'
 const parser = new RSSParser()
 
 // 設定ファイルのパス
-const EDITORIAL_RSS_CONFIG_PATH = path.join(process.cwd(), 'data/editorial-rss-config.json')
+const EDITORIAL_RSS_CONFIG_PATH = path.join(process.cwd(), 'config/editorial-rss-config.json')
 const EDITORIAL_NOTES_PATH = path.join(process.cwd(), 'public/data/editorial-notes.json')
 
 // 編集後記RSS設定を読み込み

@@ -19,12 +19,12 @@ echo "  ✅ Claude Code 自動化スクリプト"
 # エピソード状況確認
 echo ""
 echo "🎧 エピソード状況:"
-if [ -f "data/episodes.json" ]; then
-    EPISODE_COUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('data/episodes.json')).length)")
+if [ -f "public/data/episodes.json" ]; then
+    EPISODE_COUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('public/data/episodes.json')).length)")
     echo "  📊 総エピソード数: $EPISODE_COUNT"
 
     # 最新エピソード情報
-    LATEST_TITLE=$(node -e "const eps = JSON.parse(require('fs').readFileSync('data/episodes.json')); console.log(eps[0]?.title || 'なし')")
+    LATEST_TITLE=$(node -e "const eps = JSON.parse(require('fs').readFileSync('public/data/episodes.json')); console.log(eps[0]?.title || 'なし')")
     echo "  🎵 最新エピソード: $LATEST_TITLE"
 else
     echo "  ⚠️ episodes.json が見つかりません"
@@ -73,5 +73,5 @@ echo "⏰ 更新時刻: $CURRENT_DATE $CURRENT_TIME"
 echo ""
 echo "🔗 関連リンク:"
 echo "  📚 consultation/discussions/ - 壁打ちログ"
-echo "  📊 data/episodes.json - エピソードデータ"
+echo "  📊 public/data/episodes.json - エピソードデータ"
 echo "  🛠️ scripts/ - 自動化スクリプト"

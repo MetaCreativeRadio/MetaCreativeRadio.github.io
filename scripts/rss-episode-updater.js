@@ -12,7 +12,7 @@ import path from 'path'
 const parser = new RSSParser()
 
 // 設定ファイルのパス
-const RSS_CONFIG_PATH = path.join(process.cwd(), 'data/rss-config.json')
+const RSS_CONFIG_PATH = path.join(process.cwd(), 'config/rss-config.json')
 const EPISODES_PATH = path.join(process.cwd(), 'public/data/episodes.json')
 
 // RSS設定を読み込み

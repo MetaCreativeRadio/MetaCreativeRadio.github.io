@@ -27,7 +27,7 @@ npm run fetch-episode "https://open.spotify.com/episode/YOUR_EPISODE_ID"
 
 1. **自動処理**:
    - Spotify URLからエピソード情報を取得
-   - `data/episodes.json` を自動更新
+   - `public/data/episodes.json` を自動更新
    - トップページの「Latest Episode」が最新情報に更新
    - エピソード一覧ページに新しいエピソードが追加
 
@@ -48,7 +48,7 @@ npm run fetch-episode "https://open.spotify.com/episode/YOUR_EPISODE_ID"
 
 ## データ構造
 
-`data/episodes.json` に以下の形式でデータが保存されます：
+`public/data/episodes.json` に以下の形式でデータが保存されます：
 
 ```json
 [
