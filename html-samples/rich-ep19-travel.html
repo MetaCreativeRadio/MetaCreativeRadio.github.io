@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>僕らが旅に出る理由——プリプロダクションとしての人生 | メタクリラジオ Ep.19</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       CSS CUSTOM PROPERTIES
+    ======================================== */
+    :root {
+      /* Light "Atelier Morning" */
+      --base: #F5F0E8;
+      --surface: #FAF8F5;
+      --white: #FDFCFA;
+      --text-primary: #2C3330;
+      --text-secondary: #6B6560;
+      --text-muted: #9E9690;
+      --border: #E5DFD6;
+
+      /* Core Colors */
+      --sage-50: #F4F6F2;
+      --sage-100: #E2E8DD;
+      --sage-200: #C5D1BC;
+      --sage-400: #8B9A7D;
+      --sage-500: #6B7F5D;
+      --sage-600: #5E6E52;
+      --gold-50: #FDF9EE;
+      --gold-100: #F7EDCC;
+      --gold-200: #EEDEA5;
+      --gold-400: #C4A057;
+      --gold-500: #A68B45;
+      --gold-600: #9A7B3A;
+      --rose-50: #FDF5F3;
+      --rose-100: #F8E4DF;
+      --rose-200: #F0C4BB;
+      --rose-400: #E8A598;
+      --rose-600: #D88B7A;
+      --blue-50: #F0F5FA;
+      --blue-400: #5B8DB8;
+      --blue-600: #3A6B91;
+
+      /* Dark "Study Night" */
+      --dark-base: #1C1A17;
+      --dark-surface: #252320;
+      --dark-surface-raised: #2E2B27;
+      --dark-text: #E2DDD5;
+      --dark-text-secondary: #A09890;
+      --dark-border: #3A3630;
+      --dark-gold-400: #B89040;
+      --dark-gold-600: #E0C070;
+
+      /* Gradients */
+      --gradient-accent: linear-gradient(135deg, var(--sage-400) 0%, var(--gold-400) 100%);
+      --gradient-accent-90: linear-gradient(90deg, var(--sage-400), var(--gold-400));
+
+      /* Timing */
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ========================================
+       RESET & BASE
+    ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--base);
+      color: var(--text-primary);
+      line-height: 2;
+      overflow-x: hidden;
+      transition: background-color 0.8s var(--ease);
+    }
+
+    img { max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ========================================
+       PROGRESS BAR + CHAPTER CONTEXT
+    ======================================== */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1100;
+      transform: translateY(-100%);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .progress-bar.visible {
+      transform: translateY(0);
+    }
+
+    .progress-line {
+      height: 3px;
+      background: var(--gradient-accent-90);
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    .progress-context {
+      background: rgba(28, 26, 23, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .progress-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+    }
+
+    .progress-chapter {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.8rem;
+      color: var(--dark-text-secondary);
+      transition: opacity 0.3s var(--ease);
+    }
+
+    /* ========================================
+       SIDE TOC (DOT NAV)
+    ======================================== */
+    .side-toc {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      display: none;
+    }
+
+    @media (min-width: 1200px) {
+      .side-toc { display: flex; flex-direction: column; gap: 1.2rem; }
+    }
+
+    .toc-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--text-muted);
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s var(--ease);
+    }
+
+    .toc-dot.active {
+      border-color: var(--gold-400);
+      background: var(--gold-400);
+      transform: scale(1.3);
+    }
+
+    .toc-dot-label {
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: var(--surface);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(44, 51, 48, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s var(--ease);
+    }
+
+    .toc-dot:hover .toc-dot-label {
+      opacity: 1;
+    }
+
+    /* ========================================
+       HERO SECTION
+    ======================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: var(--dark-base);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background:
+        radial-gradient(ellipse at 25% 35%, rgba(196, 160, 87, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 65%, rgba(139, 154, 125, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(196, 160, 87, 0.15) 0%, transparent 60%);
+      animation: heroGlow 18s ease-in-out infinite;
+    }
+
+    .hero-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .shape {
+      position: absolute;
+      opacity: 0.08;
+      animation: floatShape 20s ease-in-out infinite;
+    }
+
+    .shape-1 {
+      top: 12%;
+      left: 8%;
+      width: 180px;
+      height: 180px;
+      border: 2px solid var(--gold-400);
+      border-radius: 50%;
+    }
+
+    .shape-2 {
+      top: 55%;
+      right: 12%;
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--sage-400);
+      transform: rotate(45deg);
+      animation-delay: -6s;
+    }
+
+    .shape-3 {
+      bottom: 18%;
+      left: 18%;
+      width: 90px;
+      height: 90px;
+      border: 2px solid var(--gold-400);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation-delay: -11s;
+    }
+
+    @keyframes floatShape {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-15px) rotate(3deg); }
+      75% { transform: translateY(15px) rotate(-3deg); }
+    }
+
+    @keyframes heroGlow {
+      0%, 100% { transform: translate(-10%, -10%) rotate(0deg); }
+      33% { transform: translate(5%, -5%) rotate(120deg); }
+      66% { transform: translate(-5%, 5%) rotate(240deg); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      margin-bottom: 0.75rem;
+      display: block;
+      animation: fadeInUp 0.8s var(--ease) both;
+    }
+
+    .hero-episode {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232, 228, 220, 0.5);
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: fadeInUp 0.8s var(--ease) 0.05s both;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--dark-text);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s var(--ease) 0.1s both;
+    }
+
+    .hero-title .accent {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--dark-text-secondary);
+      font-weight: 400;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.9;
+      animation: fadeInUp 0.8s var(--ease) 0.2s both;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      color: rgba(232, 228, 220, 0.4);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      animation: fadeInUp 0.8s var(--ease) 0.3s both;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-meta span::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--gold-400);
+      border-radius: 50%;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s ease-in-out infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 2;
+    }
+
+    .scroll-indicator span {
+      color: rgba(232, 228, 220, 0.4);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-indicator::after {
+      content: '\2193';
+      font-size: 1.2rem;
+      color: var(--gold-400);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========================================
+       REVEAL + SPOTLIGHT ANIMATION SYSTEM
+    ======================================== */
+    .reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    @media (min-width: 1024px) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .reveal.pc-revealed {
+        opacity: 1 !important;
+        transform: translateY(0) translateX(0) scale(1) scaleX(1) !important;
+      }
+    }
+
+    html.spotlight-ready .reveal {
+      animation: spotlight linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+
+    @keyframes spotlight {
+      0%   { opacity: 0.2;  filter: blur(1px);   transform: translateY(6px); }
+      12%  { opacity: 0.2;  filter: blur(1px);   transform: translateY(6px); }
+      25%  { opacity: 0.7;  filter: blur(0.3px); transform: translateY(1px); }
+      30%  { opacity: 1;    filter: blur(0);     transform: translateY(0); }
+      70%  { opacity: 1;    filter: blur(0);     transform: translateY(0); }
+      80%  { opacity: 0.5;  filter: none;        transform: none; }
+      90%  { opacity: 0.25; filter: none;        transform: none; }
+      100% { opacity: 0.2;  filter: none;        transform: none; }
+    }
+
+    html.spotlight-ready .dialogue-item.reveal {
+      animation: spotlight-slide-left linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+
+    html.spotlight-ready .dialogue-item.reveal:nth-child(even) {
+      animation-name: spotlight-slide-right;
+    }
+
+    @keyframes spotlight-slide-left {
+      0%   { opacity: 0.2;  filter: blur(1px);   transform: translateX(-16px); }
+      12%  { opacity: 0.2;  filter: blur(1px);   transform: translateX(-16px); }
+      25%  { opacity: 0.7;  filter: blur(0.3px); transform: translateX(-4px); }
+      30%  { opacity: 1;    filter: blur(0);     transform: translateX(0); }
+      70%  { opacity: 1;    filter: blur(0);     transform: translateX(0); }
+      80%  { opacity: 0.5;  filter: none;        transform: none; }
+      90%  { opacity: 0.25; filter: none;        transform: none; }
+      100% { opacity: 0.2;  filter: none;        transform: none; }
+    }
+
+    @keyframes spotlight-slide-right {
+      0%   { opacity: 0.2;  filter: blur(1px);   transform: translateX(16px); }
+      12%  { opacity: 0.2;  filter: blur(1px);   transform: translateX(16px); }
+      25%  { opacity: 0.7;  filter: blur(0.3px); transform: translateX(4px); }
+      30%  { opacity: 1;    filter: blur(0);     transform: translateX(0); }
+      70%  { opacity: 1;    filter: blur(0);     transform: translateX(0); }
+      80%  { opacity: 0.5;  filter: none;        transform: none; }
+      90%  { opacity: 0.25; filter: none;        transform: none; }
+      100% { opacity: 0.2;  filter: none;        transform: none; }
+    }
+
+    @media (min-width: 1024px) {
+      html.spotlight-ready .reveal {
+        animation: none !important;
+      }
+
+      html.pc-reveal-ready .reveal {
+        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      html.pc-reveal-ready .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      html.pc-reveal-ready .chapter-header.reveal {
+        transform: scale(0.85) translateY(30px);
+        transition-duration: 0.8s;
+      }
+
+      html.pc-reveal-ready .section-divider.reveal {
+        transform: scaleX(0.3);
+        transition-duration: 0.6s;
+      }
+
+      html.pc-reveal-ready .concept-diagram.reveal,
+      html.pc-reveal-ready .contrast-diagram.reveal {
+        transform: scale(0.9);
+        transition-duration: 0.7s;
+      }
+
+      html.pc-reveal-ready .takeaway-card.reveal {
+        transform: scale(0.9) translateY(20px);
+        transition-duration: 0.6s;
+      }
+
+      html.pc-reveal-ready .dialogue-item.reveal {
+        transform: translateX(-60px);
+        transition-duration: 0.65s;
+      }
+
+      html.pc-reveal-ready .dialogue-item.reveal:nth-child(even) {
+        transform: translateX(60px);
+      }
+
+      html.pc-reveal-ready .reveal.pc-revealed {
+        opacity: 1 !important;
+        transform: translateY(0) translateX(0) scale(1) scaleX(1) !important;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      html.spotlight-ready .chapter-header.reveal,
+      html.spotlight-ready .concept-diagram.reveal,
+      html.spotlight-ready .contrast-diagram.reveal,
+      html.spotlight-ready .section-divider.reveal {
+        animation: spotlight-always-visible linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+    }
+
+    @keyframes spotlight-always-visible {
+      0%   { opacity: 0; transform: translateY(12px); }
+      20%  { opacity: 1; transform: translateY(0); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    html.reveal-ready .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+
+    html.reveal-ready .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+
+    html.reveal-ready .dialogue-item.reveal {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+
+    html.reveal-ready .dialogue-item.reveal:nth-child(even) {
+      transform: translateX(30px);
+    }
+
+    html.reveal-ready .dialogue-item.reveal.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    html.spotlight-ready {
+      scrollbar-width: none;
+    }
+    html.spotlight-ready::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ========================================
+       MAIN LAYOUT
+    ======================================== */
+    .main-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .rhythm-breath { margin-bottom: 2rem; }
+    .rhythm-ma { margin-bottom: 4rem; }
+
+    /* ========================================
+       SECTION DIVIDER
+    ======================================== */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 4rem 0;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 2px;
+      background: var(--gradient-accent-90);
+      border-radius: 1px;
+    }
+
+    .section-divider .divider-emoji {
+      font-size: 1.3rem;
+    }
+
+    /* ========================================
+       CHAPTER SECTIONS
+    ======================================== */
+    .chapter-section {
+      padding: 7rem 0 3rem;
+      position: relative;
+      transition: background-color 0.8s var(--ease);
+    }
+
+    .chapter-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .chapter-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .chapter-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .chapter-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .chapter-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gradient-accent);
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+
+    .chapter-subtitle {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-top: 0.75rem;
+    }
+
+    /* ========================================
+       INTRODUCTION
+    ======================================== */
+    .intro-section {
+      padding: 5rem 0 3rem;
+      background: var(--surface);
+      position: relative;
+    }
+
+    .intro-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent-90);
+    }
+
+    .intro-lead {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      line-height: 2.2;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+    }
+
+    .intro-lead::first-letter {
+      font-size: 3.8rem;
+      float: left;
+      line-height: 1;
+      margin-right: 0.4rem;
+      margin-top: 0.15rem;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    /* ========================================
+       GUIDE TEXT (Body)
+    ======================================== */
+    .guide-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1.05rem;
+      line-height: 2;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    .body-text {
+      font-size: 1.05rem;
+      line-height: 2;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+    }
+
+    /* ========================================
+       DIALOGUE EXCHANGE
+    ======================================== */
+    .dialogue-block {
+      margin: 2rem 0 4rem;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 1px 2px rgba(44, 51, 48, 0.05);
+    }
+
+    .dialogue-item {
+      padding: 1rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .dialogue-item:not(:last-child) {
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .dialogue-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      bottom: 0.75rem;
+      width: 4px;
+      border-radius: 2px;
+    }
+
+    .dialogue-item.speaker-tamkai::before {
+      background: var(--sage-400);
+    }
+
+    .dialogue-item.speaker-opi::before {
+      background: var(--blue-400);
+    }
+
+    .dialogue-speaker {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .dialogue-speaker.tamkai {
+      color: var(--sage-600);
+    }
+
+    .dialogue-speaker.opi {
+      color: var(--blue-600);
+    }
+
+    .dialogue-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text-primary);
+      font-style: normal;
+    }
+
+    /* ========================================
+       PULL QUOTE
+    ======================================== */
+    .pull-quote {
+      margin: 4rem 0;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .pull-quote::before {
+      content: '\201C';
+      font-family: Georgia, serif;
+      font-size: 5rem;
+      color: var(--gold-200);
+      position: absolute;
+      top: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 1;
+    }
+
+    .pull-quote-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      line-height: 1.8;
+      color: var(--text-primary);
+      max-width: 700px;
+      margin: 0 auto;
+      padding-top: 1rem;
+    }
+
+    .pull-quote-attribution {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ========================================
+       ANNOTATION BLOCK
+    ======================================== */
+    .annotation {
+      margin: 4rem 0;
+      background: var(--dark-surface);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .annotation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent-90);
+    }
+
+    .annotation-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .annotation-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dark-base);
+      background: var(--gold-400);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .annotation-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .annotation-body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: var(--dark-text-secondary);
+      position: relative;
+      max-height: 4.5em;
+      overflow: hidden;
+      transition: max-height 0.5s var(--ease);
+    }
+
+    .annotation-body::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2em;
+      background: linear-gradient(transparent, var(--dark-surface));
+      transition: opacity 0.3s var(--ease);
+    }
+
+    html:not(.reveal-ready) .annotation-body {
+      max-height: none;
+    }
+    html:not(.reveal-ready) .annotation-body::after {
+      display: none;
+    }
+    html:not(.reveal-ready) .annotation-toggle {
+      display: none;
+    }
+
+    .annotation.expanded .annotation-body {
+      max-height: 500px;
+    }
+
+    .annotation.expanded .annotation-body::after {
+      opacity: 0;
+    }
+
+    .annotation-toggle {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      margin-top: 0.5rem;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .annotation.expanded .annotation-toggle .toggle-more {
+      display: none;
+    }
+
+    .annotation:not(.expanded) .annotation-toggle .toggle-less {
+      display: none;
+    }
+
+    /* ========================================
+       HIGHLIGHT BOX
+    ======================================== */
+    .highlight-box {
+      background: var(--gold-50);
+      border: 1px solid var(--gold-100);
+      border-left: 4px solid var(--gold-400);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .highlight-box-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 0.2rem;
+    }
+
+    .highlight-box p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text-primary);
+    }
+
+    /* ========================================
+       CONCEPT DIAGRAM
+    ======================================== */
+    .concept-diagram {
+      margin: 3rem 0;
+      padding: 2.5rem 2rem;
+      background: var(--sage-50);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .concept-diagram-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-600);
+      margin-bottom: 1.5rem;
+    }
+
+    .concept-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 1rem;
+    }
+
+    .concept-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 1px 2px rgba(44, 51, 48, 0.05);
+      min-width: 80px;
+    }
+
+    .concept-step-emoji {
+      font-size: 1.8rem;
+    }
+
+    .concept-step-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .concept-arrow {
+      font-size: 1.3rem;
+      color: var(--sage-400);
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       CONTRAST DIAGRAM
+    ======================================== */
+    .contrast-diagram {
+      margin: 3rem 0;
+      padding: 2.5rem 2rem;
+      background: var(--sage-50);
+      border-radius: 16px;
+    }
+
+    .contrast-diagram-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-600);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .contrast-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 600px) {
+      .contrast-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .contrast-side {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 2px rgba(44, 51, 48, 0.05);
+    }
+
+    .contrast-side--left {
+      border-top: 3px solid var(--sage-400);
+    }
+
+    .contrast-side--right {
+      border-top: 3px solid var(--gold-500);
+    }
+
+    .contrast-side-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contrast-side-emoji {
+      font-size: 1.5rem;
+    }
+
+    .contrast-side-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .contrast-side-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .contrast-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contrast-vs-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--sage-500);
+      background: var(--sage-100);
+      padding: 0.5rem 0.75rem;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .contrast-vs {
+        padding: 0.5rem 0;
+      }
+    }
+
+    /* ========================================
+       KEY TAKEAWAYS GRID
+    ======================================== */
+    .takeaways-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .takeaways-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .takeaway-card {
+      background: var(--dark-surface-raised);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .takeaway-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent-90);
+      transform: scaleX(0);
+      transition: transform 0.3s var(--ease);
+    }
+
+    .takeaway-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .takeaway-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .takeaway-emoji {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .takeaway-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .takeaway-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.85rem;
+      color: var(--dark-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       CONCLUSION (DARK)
+    ======================================== */
+    .conclusion-section {
+      background: var(--dark-base);
+      padding: 5rem 0 4rem;
+      position: relative;
+    }
+
+    .conclusion-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent-90);
+    }
+
+    .conclusion-section .chapter-number {
+      color: var(--dark-gold-600);
+    }
+
+    .conclusion-section .chapter-title {
+      color: var(--dark-text);
+    }
+
+    .conclusion-section .chapter-title::after {
+      background: var(--gradient-accent);
+    }
+
+    .conclusion-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      line-height: 2.2;
+      color: var(--dark-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .conclusion-text strong {
+      color: var(--dark-text);
+      font-weight: 700;
+    }
+
+    .conclusion-text .gold {
+      color: var(--dark-gold-600);
+    }
+
+    /* ========================================
+       SPOTIFY PLAYER
+    ======================================== */
+    .spotify-section {
+      background: var(--dark-base);
+      padding: 3rem 0 4rem;
+    }
+
+    .spotify-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dark-gold-600);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .spotify-player {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .spotify-player iframe {
+      border-radius: 12px;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      background: var(--dark-surface);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dark-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-meta {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(160, 152, 144, 0.6);
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 1.5rem;
+      }
+
+      .main-content {
+        padding: 0 1.25rem;
+      }
+
+      .chapter-section {
+        padding: 5rem 0 2rem;
+      }
+
+      .intro-section {
+        padding: 3.5rem 0 2rem;
+      }
+
+      .rhythm-breath { margin-bottom: 1.5rem; }
+      .rhythm-ma { margin-bottom: 3rem; }
+
+      .dialogue-block {
+        padding: 1.25rem 1.25rem;
+      }
+
+      .annotation {
+        padding: 1.5rem;
+      }
+
+      .pull-quote {
+        padding: 2rem 1rem;
+      }
+
+      .concept-flow {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .concept-step {
+        flex-direction: row;
+        min-width: auto;
+        width: 100%;
+        max-width: 280px;
+        padding: 0.6rem 1rem;
+        gap: 0.75rem;
+        justify-content: flex-start;
+      }
+
+      .concept-step-emoji {
+        font-size: 1.5rem;
+      }
+
+      .concept-step-label {
+        font-size: 0.8rem;
+      }
+
+      .concept-arrow {
+        font-size: 1rem;
+        transform: rotate(90deg);
+      }
+
+      .progress-context {
+        padding: 0.5rem 1rem;
+      }
+
+      .progress-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.15em;
+      }
+
+      .progress-chapter {
+        font-size: 0.7rem;
+      }
+
+      .conclusion-section {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .section-divider {
+        padding: 2rem 0;
+      }
+
+      .highlight-box {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       PROGRESS BAR + CHAPTER CONTEXT
+  ========================================== -->
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-line" id="progressLine"></div>
+    <div class="progress-context">
+      <span class="progress-label">Ep.19</span>
+      <span class="progress-chapter" id="progressChapter">Introduction</span>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SIDE DOT TOC
+  ========================================== -->
+  <nav class="side-toc" id="sideToc">
+    <div class="toc-dot" data-target="intro">
+      <span class="toc-dot-label">Introduction</span>
+    </div>
+    <div class="toc-dot" data-target="chapter1">
+      <span class="toc-dot-label">なんとかなる力の冒険</span>
+    </div>
+    <div class="toc-dot" data-target="chapter2">
+      <span class="toc-dot-label">旅はプリプロから</span>
+    </div>
+    <div class="toc-dot" data-target="chapter3">
+      <span class="toc-dot-label">レゴブロックの旅行術</span>
+    </div>
+    <div class="toc-dot" data-target="chapter4">
+      <span class="toc-dot-label">プロトピアと腹時計</span>
+    </div>
+    <div class="toc-dot" data-target="conclusion">
+      <span class="toc-dot-label">Conclusion</span>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HERO
+  ========================================== -->
+  <header class="hero" id="hero">
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-label">Metacreative Radio</span>
+      <span class="hero-episode">Episode 19</span>
+      <h1 class="hero-title">僕らが<span class="accent">旅</span>に出る理由</h1>
+      <p class="hero-subtitle">パリの韓国人おばちゃん、名古屋の台湾まぜそば、<br>そしてワカンダの未来学者が教えてくれること</p>
+      <div class="hero-meta">
+        <span>2026.02.02</span>
+        <span>Tamkai & Opi</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       INTRODUCTION
+  ========================================== -->
+  <section class="intro-section" id="intro" data-atmosphere="warm" data-chapter-name="Introduction">
+    <div class="main-content">
+      <div class="chapter-header reveal">
+        <span class="chapter-icon">✈️</span>
+        <span class="chapter-number">Introduction</span>
+        <h2 class="chapter-title">「あまり乗り気じゃなかった」旅の始まり方</h2>
+      </div>
+
+      <p class="intro-lead reveal">旅には二種類ある。「行こう」と自分で決めて出発する旅と、「行くよね？」と誰かに言われて気づけば出発している旅。タムカイの旅は、ほぼ後者である。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「メタクリラジオ、僕らが旅に出る理由について話そうよ」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「まあ、心変わりはね、何かのせいなんで。あまり乗り気じゃなかったんですよ、マジで。名古屋マジかいっつって」</p>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">「心変わりはね、何かのせいなんで」「あまり乗り気じゃなかったんですよ」——実はこれらはどちらも小沢健二の楽曲「僕らが旅に出る理由」（1994年）の歌詞の引用である。タムカイはその歌詞を織り込みながら応答する。一聴すると本当に名古屋に乗り気でなかったように聞こえるが、歌詞を知っている者にはニヤリとさせる、ハイコンテクストな掛け合いだ。</p>
+
+      <p class="guide-text reveal">本エピソードは、名古屋への旅を起点に、驚くべき広がりを見せていく。25年前のパリでの冒険、映像制作における「プリプロダクション」と旅の類似性、レゴブロック的な旅行計画、車内でのDJ権の喜び、そしてワカンダの未来学者が語る「プロトピア」、さらにはAIの時間感覚と人間の腹時計の対比にまで至る。</p>
+
+      <div class="highlight-box reveal">
+        <span class="highlight-box-icon">❓</span>
+        <p>一見すると散漫な話題の連鎖だが、その底流には一つの問いが流れている。<strong>旅はいつ始まり、いつ終わるのか。そして、旅の「余韻」とは何か</strong>——。</p>
+      </div>
+
+      <div class="annotation reveal" onclick="this.classList.toggle('expanded')">
+        <span class="annotation-badge">Annotation</span>
+        <h4 class="annotation-title">AI Dev NINJA</h4>
+        <div class="annotation-body">
+          <p>正式名称は「AI Dev NINJA」。AI駆動開発に関わる実践者が集まるコミュニティイベントで、インフォバーンの小林弘人氏が発起人。アーサー・C・クラークの第三法則——「十分に発達した科学技術は、魔法と見分けがつかない」——を「AIとの協働は高度な忍術のようだ」と読み替えたところから命名された。vol.1は2025年12月に東京で開催され、vol.2は名古屋のテックガーラ（TECH GALA）のサイドイベントとして2026年1月27日に実施された。</p>
+        </div>
+        <span class="annotation-toggle"><span class="toggle-more">+ more</span><span class="toggle-less">- less</span></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider reveal"><span class="divider-emoji">🗼</span></div>
+
+  <!-- ==========================================
+       CHAPTER 1: なんとかなる力の冒険
+  ========================================== -->
+  <section class="chapter-section" id="chapter1" data-atmosphere="warm" data-chapter-name="なんとかなる力の冒険">
+    <div class="main-content">
+      <div class="chapter-header reveal">
+        <span class="chapter-icon">🌍</span>
+        <span class="chapter-number">Chapter 01</span>
+        <h2 class="chapter-title">なんとかなる力の冒険</h2>
+        <p class="chapter-subtitle">パリ北駅から始まった旅</p>
+      </div>
+
+      <p class="guide-text reveal">タムカイの旅への姿勢を理解するには、まず「家」への感覚を知る必要がある。整ったモニター環境、手を伸ばせば調味料が揃うキッチン。その最適化された環境への愛着から、彼の旅のスタイルが見えてくる。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「自分の根っこがどこにあるかみたいな話なのかな。よくある、帰ってきてお母さんが言う、やっぱりうちが一番ねっていう感覚。あれが割とあるかもしれないな」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「旅をしょっちゅうしてさ、タムカイさんの中のいろんな周りのツールが旅に最適化されてたら、気にならなくなるのかな」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「そっちが常態化されたら気にならなくなるのかもしれないですよね」</p>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">しかし、このインドア志向の人間には、25年前のパリでの冒険譚がある。大学4年の時、恩師がオランダに交換留学し、オンラインでゼミをやることになった。1回は会おうということでTGVのチケットだけ取ってパリへ向かった。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「お前は日本人かチャイニーズか韓国かどれかって言われて、ジャパニーズだっつって。ホテルはあるのかって言われて、ないんだけどっつって。うちの家がユースホステルやってるから泊まりに来ていいよって言われて」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「もう完全になんかの勧誘じゃないですか」</p>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">不安になったタムカイは公衆電話で先生に相談した。当時はまだ海外で使える携帯電話もなかったのだ。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「今こういうおばちゃんに声かけられたんですけど、これ大丈夫だと思いますかねって言ったら、わかんねえって言われて、わかんないですよねっつってガチャンって切って」</p>
+        </div>
+      </div>
+
+      <p class="guide-text reveal"><strong>「1回聞く」</strong>——これはタムカイの思考のプロトコルなのだろう。判断を他者に委ねたいのではなく、他者の反応という「入力」を得てから自分の判断を起動させる。25年前のパリでも、現在のAI開発でも、同じパターンが繰り返されている。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「思ったのはまず駅までは行こうと。電話はかけようと。電話かけて出た人が男だったら帰ろう。来る人が男だったら知らんふりして逃げようと思ったら、ちっちゃい女の人が来たから、まだいけるなっつって」</p>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">結果として本当にユースホステルだった。韓国人のバックパッカーと仲良くなり、翌日は一緒にセーヌ川の安い観光クルーズに行くほど。</p>
+
+      <div class="pull-quote reveal">
+        <p class="pull-quote-text">なんとかする力があるから、<br>なんとかするところに自分を放り込むよりは、<br>何か起こった後でなんとか面白くしようって思うタイプ</p>
+        <p class="pull-quote-attribution">--- Tamkai</p>
+      </div>
+
+      <p class="guide-text reveal">「状況対応型の創造性」——この自己分析は正確だろう。初期衝動で何かを表現するタイプではなく、状況に対する「応答」として創造が始まる。パリでも名古屋でも、他者からの呼びかけがなければ旅は始まらない。しかし、始まってしまえば全力で「なんとかする」。</p>
+
+      <div class="annotation reveal" onclick="this.classList.toggle('expanded')">
+        <span class="annotation-badge">Annotation</span>
+        <h4 class="annotation-title">ポンヌフの恋人——新橋のがっかり</h4>
+        <div class="annotation-body">
+          <p>Opiもセーヌ川にまつわるエピソードを持っていた。映画『ポンヌフの恋人』（1991年、レオス・カラックス監督）が好きで、パリのポンヌフ橋まで行った。しかし、「ポンヌフ」がフランス語で「新橋」を意味すると知り、テンションが下がった。さらに、元ネイキッドの会社の顧問から「あの映画、撮影許可が下りなくて全部他のところで作り直して撮ったらしい」と聞かされ、二重のがっかりを経験している。</p>
+        </div>
+        <span class="annotation-toggle"><span class="toggle-more">+ more</span><span class="toggle-less">- less</span></span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider reveal"><span class="divider-emoji">🎬</span></div>
+
+  <!-- ==========================================
+       CHAPTER 2: 旅はプリプロダクションから始まる
+  ========================================== -->
+  <section class="chapter-section" id="chapter2" data-atmosphere="cool" data-chapter-name="旅はプリプロから">
+    <div class="main-content">
+      <div class="chapter-header reveal">
+        <span class="chapter-icon">🎬</span>
+        <span class="chapter-number">Chapter 02</span>
+        <h2 class="chapter-title">旅はプリプロダクションから始まる</h2>
+        <p class="chapter-subtitle">映像制作者の時間感覚</p>
+      </div>
+
+      <p class="guide-text reveal">Opiの旅観は、タムカイとは根本的に異なる。旅の「起点」をどこに置くか——その違いが二人の間に見えてきた。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「僕はあの旅行、もともと好きなんだけど、多分旅の起点がね、行こうって思った日から、もう旅が始まってるんですよ。だから今回、名古屋に行った時も、多分その旅は去年の12月からもう始まってるんだよね」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「なんかイメージで言うと、グラデーションになっている人と、その瞬間からになる人がいるのだろうな。僕は直前のここっていうところからが旅になって、ここっていうところで終わる」</p>
+        </div>
+      </div>
+
+      <div class="contrast-diagram reveal">
+        <p class="contrast-diagram-label">旅の始まりをどこに置くか</p>
+        <div class="contrast-grid">
+          <div class="contrast-side contrast-side--left">
+            <div class="contrast-side-header">
+              <span class="contrast-side-emoji">📍</span>
+              <span class="contrast-side-title">タムカイ型</span>
+            </div>
+            <p class="contrast-side-desc">直前から旅が始まる。余韻はあるけど旅の一部ではない。瞬間的にオン/オフが切り替わる。</p>
+          </div>
+          <div class="contrast-vs">
+            <span class="contrast-vs-text">VS</span>
+          </div>
+          <div class="contrast-side contrast-side--right">
+            <div class="contrast-side-header">
+              <span class="contrast-side-emoji">🌈</span>
+              <span class="contrast-side-title">Opi型</span>
+            </div>
+            <p class="contrast-side-desc">行こうと思った日から旅が始まる。日常に紛れ込み、混ざり込む。グラデーション的に移行する。</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">そしてOpiは、自分の旅の感覚の起源に思い至った。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「いや、俺、今話して思ったんだけど、これ映像をやってるからだわ。映像ってプリプロダクションとポストプロダクションがあってさ。プリプロやってる時にその作品をまだ撮ってないかって言ったら撮ってないけど、その作品を作ってるか作ってないかでいうと、もう作ってるわけじゃない」</p>
+        </div>
+      </div>
+
+      <div class="concept-diagram reveal">
+        <p class="concept-diagram-label">旅の三層構造</p>
+        <div class="concept-flow">
+          <div class="concept-step">
+            <span class="concept-step-emoji">📋</span>
+            <span class="concept-step-label">プリプロ</span>
+          </div>
+          <span class="concept-arrow">→</span>
+          <div class="concept-step">
+            <span class="concept-step-emoji">🎥</span>
+            <span class="concept-step-label">撮影</span>
+          </div>
+          <span class="concept-arrow">→</span>
+          <div class="concept-step">
+            <span class="concept-step-emoji">✂️</span>
+            <span class="concept-step-label">ポストプロ</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">映像制作において、プリプロダクション（撮影前の準備）、プロダクション（撮影）、ポストプロダクション（編集・仕上げ）は連続した一つのプロセスである。Opiにとって旅もまた、同じ構造を持つ。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「めちゃめちゃ細かくは1回立てて。現場のバイブスに合わせて全部変えちゃうみたいな。脚本は細かく書きます。でも現場で演者さんの演技って千差万別なわけじゃない」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「全部1回頭に入れてから、その後まっさらにして演技に臨むみたいなのは近いかもしれない」</p>
+        </div>
+      </div>
+
+      <div class="annotation reveal" onclick="this.classList.toggle('expanded')">
+        <span class="annotation-badge">Annotation</span>
+        <h4 class="annotation-title">予期的快楽（Anticipatory Pleasure）</h4>
+        <div class="annotation-body">
+          <p>心理学では、未来の楽しい出来事を想像すること自体が快楽をもたらすことが知られている。Opiがエックス（旧Twitter）で「プチバズした」という話——「人が予定を立てている時が一番幸福度が高い」——は、この「予期的快楽」の研究に基づいている。旅の計画を立てている段階がすでに旅の一部であるならば、旅の持続時間は物理的な移動期間よりもはるかに長くなる。</p>
+        </div>
+        <span class="annotation-toggle"><span class="toggle-more">+ more</span><span class="toggle-less">- less</span></span>
+      </div>
+
+      <p class="guide-text reveal">タムカイは、この「脚本を入れてからまっさらにする」アプローチを通じて、自分が計画表を苦手とする理由を発見した。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「いわゆる学校教育とかのプランとか計画って、守るためのものを作らなきゃいけないし、守るためのものを渡される。それがすごい息苦しいってなった時に、計画表というものが悪いんではないかってやっぱり思ってた」</p>
+        </div>
+      </div>
+
+      <div class="pull-quote reveal">
+        <p class="pull-quote-text">Opiはプリプロを担当し、<br>タムカイは「撮影現場」でアドリブを入れる演者</p>
+        <p class="pull-quote-attribution">--- 二人の役割分担</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider reveal"><span class="divider-emoji">🧱</span></div>
+
+  <!-- ==========================================
+       CHAPTER 3: レゴブロックの旅行術
+  ========================================== -->
+  <section class="chapter-section" id="chapter3" data-atmosphere="warm" data-chapter-name="レゴブロックの旅行術">
+    <div class="main-content">
+      <div class="chapter-header reveal">
+        <span class="chapter-icon">🧱</span>
+        <span class="chapter-number">Chapter 03</span>
+        <h2 class="chapter-title">レゴブロックの旅行術</h2>
+        <p class="chapter-subtitle">名古屋で起きたこと</p>
+      </div>
+
+      <p class="guide-text reveal">タムカイは最近、家族旅行で「生まれて初めてチェックポイント型の予定を立てた」と語った。AIを使って予定表を作り、いくつかのチェックポイントを認識した上で、組み上げは即興でやる。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「徒手空拳だとそれが何かもわからない、レゴブロックだとパーツを確かめてる間に時間が来てしまうパターンと、もう完全にこれを作りますっていう今売ってるレゴみたいに1番の工程でこれとこれを組み合わせてみたいなものがあると」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「今回はバラバラのレゴブロックの何のパーツがあるかは理解してる状態で、組み上げるのは即興でやるみたいな感じでした」</p>
+        </div>
+      </div>
+
+      <div class="concept-diagram reveal">
+        <p class="concept-diagram-label">レゴブロック的計画</p>
+        <div class="concept-flow">
+          <div class="concept-step">
+            <span class="concept-step-emoji">📦</span>
+            <span class="concept-step-label">パーツ認識</span>
+          </div>
+          <span class="concept-arrow">→</span>
+          <div class="concept-step">
+            <span class="concept-step-emoji">🧩</span>
+            <span class="concept-step-label">時系列整理</span>
+          </div>
+          <span class="concept-arrow">→</span>
+          <div class="concept-step">
+            <span class="concept-step-emoji">🎭</span>
+            <span class="concept-step-label">即興で組立</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">Opiの作った名古屋のしおりも、結果的にはこの構造だった。順序は変わっても、要素は網羅されている。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「予定通りにはやらなかったけど、コンテンツはちゃんと消化した。俺の中でやらなかったって感覚はないんだよね」</p>
+        </div>
+      </div>
+
+      <div class="section-divider reveal"><span class="divider-emoji">🎵</span></div>
+
+      <p class="guide-text reveal">名古屋への車中で、もう一つの発見があった。4時間のドライブでタムカイがDJを務めた経験は、予想外の親密さを生んでいた。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「ドライブの時に助手席の人にDJ権を渡したいわけですよ。絶対その方が楽しいじゃんとか思ってて」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「もともとやっぱすごい好きなんだと思います。古くはやっぱり友達の誕生日にテーマコンピCDとか作ってたタイプなんで」</p>
+        </div>
+      </div>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「最初の方は普通に雑談の裏のBGMだったのに、だんだんBGMがバックグラウンドからフォアグラウンドに上がってきて、この曲もね音楽的な背景で言うとねとか。怖いってなりましたけど笑。プロが、プロが俺の選曲に対してコメントをしている」</p>
+        </div>
+      </div>
+
+      <div class="annotation reveal" onclick="this.classList.toggle('expanded')">
+        <span class="annotation-badge">Annotation</span>
+        <h4 class="annotation-title">ケツメイシと時間の層</h4>
+        <div class="annotation-body">
+          <p>名古屋のまぜそば屋に向かう車中で、タムカイのDJ選曲からケツメイシの「手紙〜未来〜」（2002年）が流れた。10年後の自分に宛てた手紙をテーマにした楽曲で、リリース当時の「10年後」は2012年——タムカイはその頃に実際の答え合わせのような気持ちを経験し、さらに2026年の今はリリースから24年が経過している。未来に思いを馳せる歌詞のエモさは、時間を経るごとに新しい層を帯びていく。</p>
+        </div>
+        <span class="annotation-toggle"><span class="toggle-more">+ more</span><span class="toggle-less">- less</span></span>
+      </div>
+
+      <div class="section-divider reveal"><span class="divider-emoji">🎤</span></div>
+
+      <p class="guide-text reveal">AI Dev NINJA vol.2では、二人で掛け合い形式のピッチを行った。準備は混沌としていたが、結果は——</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「いろんな人に褒めてもらいましたと。なんだけど、ピッチの内容じゃなくて、掛け合いが面白かったですみたいな笑」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「ラジオパーソナリティやってるAR三兄弟の川田十夢さんに話がめっちゃ面白かったです、なんて言われて。内容はともかくとしてみたいな笑」</p>
+        </div>
+      </div>
+
+      <div class="pull-quote reveal">
+        <p class="pull-quote-text">18回のラジオ収録で培われた掛け合いは、<br>意図せずしてプレゼンの技法になっていた</p>
+        <p class="pull-quote-attribution">--- ピッチへのフィードバック</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider reveal"><span class="divider-emoji">🌐</span></div>
+
+  <!-- ==========================================
+       CHAPTER 4: プロトピアと腹時計
+  ========================================== -->
+  <section class="chapter-section" id="chapter4" data-atmosphere="creative" data-chapter-name="プロトピアと腹時計">
+    <div class="main-content">
+      <div class="chapter-header reveal">
+        <span class="chapter-icon">🌐</span>
+        <span class="chapter-number">Chapter 04</span>
+        <h2 class="chapter-title">プロトピアと腹時計</h2>
+        <p class="chapter-subtitle">時間をめぐる問い</p>
+      </div>
+
+      <p class="guide-text reveal">AI Dev NINJAが行われたテックガーラ（TECH GALA）では、キーノートスピーカーのモニカ・ビエルスカイトが強烈な印象を残した。ナイキが創業以来初めて設けた「Futurist in Residence」の初代就任者であり、『ブラックパンサー：ワカンダ・フォーエバー』のコンサルタントも務めた人物だ。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「ガガ様かモニカかぐらいの。肩のキュンってなった感じとか」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「ブレードランナーとブラックパンサーだったからね」</p>
+        </div>
+      </div>
+
+      <p class="guide-text reveal">モニカの講演で二人が特に印象を受けたのが、「プロトピア」という概念だった。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「悪い方がディストピア、いい方がユートピアで、今までどうしてもその二つに分かれて、その極にいる人たち同士の争いを見てて。何も思ってない自分とかは、どっちなんだろうって黙るか」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「プロトピア——その時の状況に合わせたりしながら、未来を作り続けていく姿勢みたいなもの」</p>
+        </div>
+      </div>
+
+      <div class="contrast-diagram reveal">
+        <p class="contrast-diagram-label">第三の道</p>
+        <div class="contrast-grid">
+          <div class="contrast-side contrast-side--left">
+            <div class="contrast-side-header">
+              <span class="contrast-side-emoji">🌑</span>
+              <span class="contrast-side-title">ディストピア</span>
+            </div>
+            <p class="contrast-side-desc">テクノロジーは人類の脅威。AIは仕事を奪い、世界を破滅に導く。</p>
+          </div>
+          <div class="contrast-vs">
+            <span class="contrast-vs-text">VS</span>
+          </div>
+          <div class="contrast-side contrast-side--right">
+            <div class="contrast-side-header">
+              <span class="contrast-side-emoji">🌟</span>
+              <span class="contrast-side-title">ユートピア</span>
+            </div>
+            <p class="contrast-side-desc">テクノロジーは万能の救世主。AIが全てを解決してくれる。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box reveal">
+        <span class="highlight-box-icon">🌱</span>
+        <p><strong>プロトピア</strong>——完成された理想ではなく、「少しずつ良くなっていく」プロセスとしての未来。ケヴィン・ケリーが提唱し、モニカが発展させた概念。</p>
+      </div>
+
+      <p class="guide-text reveal">AIの時間感覚の話は、人間の時間感覚の起源へと遡った。</p>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「僕らも身の回りにカレンダーとか時計があるから、今は何月何日の何時だなって思いますけど。これゼロだとその感覚すげえ薄くなりません？」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text">「腹時計って、時計っていう概念が生まれるまでは腹時計って呼ばれてなかったわけですよね。腹の虫の方だったんですかね」</p>
+        </div>
+      </div>
+
+      <div class="annotation reveal" onclick="this.classList.toggle('expanded')">
+        <span class="annotation-badge">Annotation</span>
+        <h4 class="annotation-title">名前に埋め込まれた認知構造</h4>
+        <div class="annotation-body">
+          <p>「腹時計」の語源をめぐるタムカイの問いは、言語学におけるサピア＝ウォーフ仮説の日常版とも言える。「腹時計」という言葉は、身体感覚（空腹）を外部の道具（時計）になぞらえたメタファーだが、メタファーの母体（時計）が存在しなければ、同じ身体感覚は別の言葉で、あるいはそもそも言語化されずに処理されていただろう。Ep15でタムカイが議論した「黒電話のアイコンで電話を認識している子供」の問題と同じ構造がここにある。</p>
+        </div>
+        <span class="annotation-toggle"><span class="toggle-more">+ more</span><span class="toggle-less">- less</span></span>
+      </div>
+
+      <div class="dialogue-block">
+        <div class="dialogue-item reveal speaker-opi">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text">「タイムというよりも、状態。ステートとかそういう感じ。その状態の変化っていうのが結構今後面白いのかもね」</p>
+        </div>
+      </div>
+
+      <div class="pull-quote reveal">
+        <p class="pull-quote-text">人間が「時間が経つ」と感じるものの正体は、<br>実は「状態が変化した」ことの認知なのかもしれない</p>
+        <p class="pull-quote-attribution">--- AIと時間をめぐる考察</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONCLUSION (DARK)
+  ========================================== -->
+  <section class="conclusion-section" id="conclusion" data-atmosphere="deep" data-chapter-name="Conclusion">
+    <div class="main-content">
+      <div class="chapter-header reveal">
+        <span class="chapter-icon">✨</span>
+        <span class="chapter-number">Conclusion</span>
+        <h2 class="chapter-title">名古屋の余韻、あるいは人生のポストプロダクション</h2>
+      </div>
+
+      <p class="conclusion-text reveal">旅は状態を変える。名古屋に行く前と後で、二人の間に何かが変わった。</p>
+
+      <div class="dialogue-block" style="background: var(--dark-surface-raised);">
+        <div class="dialogue-item reveal speaker-tamkai" style="border-color: var(--dark-border);">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text" style="color: var(--dark-text);">「明らかに名古屋に行く前の僕と名古屋に行った後の僕は違うし、名古屋に行く前の僕ら2人の感じとあとの感じはちょっと違う感じがありましたね」</p>
+        </div>
+      </div>
+
+      <p class="conclusion-text reveal">4時間のドライブでタムカイがDJを務めた経験は、予想外の親密さを生んでいた。</p>
+
+      <div class="dialogue-block" style="background: var(--dark-surface-raised);">
+        <div class="dialogue-item reveal speaker-opi" style="border-color: var(--dark-border);">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text" style="color: var(--dark-text);">「ちょっと恥ずかしいのと、異なる世代の人の時間軸合わせみたいな。つながってなかった人生の時間軸みたいなのが、少しつながるみたいな」</p>
+        </div>
+      </div>
+
+      <p class="conclusion-text reveal"><strong class="gold">「僕らが旅に出る理由」</strong>——Opiは冒頭でこのテーマを掲げたが、結局、二人は「理由」を明確にはしなかった。旅に出る理由は、旅に出た後にしかわからない。</p>
+
+      <p class="conclusion-text reveal">そしてそれで十分なのだろう。旅の理由は、旅の余韻の中にこそ生まれる。<strong>プロトピア的に——少しずつ、状態が変わりながら。</strong></p>
+
+      <div class="dialogue-block" style="background: var(--dark-surface-raised);">
+        <div class="dialogue-item reveal speaker-opi" style="border-color: var(--dark-border);">
+          <p class="dialogue-speaker opi">Opi</p>
+          <p class="dialogue-text" style="color: var(--dark-text);">「ちょっといい話で終わってな、珍しいな」</p>
+        </div>
+        <div class="dialogue-item reveal speaker-tamkai" style="border-color: var(--dark-border);">
+          <p class="dialogue-speaker tamkai">Tamkai</p>
+          <p class="dialogue-text" style="color: var(--dark-text);">「いや、これが名古屋の余韻ですよ」</p>
+        </div>
+      </div>
+
+      <!-- Key Takeaways -->
+      <div style="margin-top: 3rem;">
+        <p class="reveal" style="font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dark-gold-600); text-align: center; margin-bottom: 1.5rem;">Key Takeaways</p>
+
+        <div class="takeaways-grid">
+          <div class="takeaway-card reveal">
+            <span class="takeaway-emoji">🌍</span>
+            <h4 class="takeaway-title">状況対応型の創造性</h4>
+            <p class="takeaway-desc">初期衝動ではなく、状況に対する「応答」として創造が始まる。他者の呼びかけがトリガーになる。</p>
+          </div>
+          <div class="takeaway-card reveal">
+            <span class="takeaway-emoji">🎬</span>
+            <h4 class="takeaway-title">プリプロダクションとしての旅</h4>
+            <p class="takeaway-desc">行こうと思った日から旅は始まる。計画を立てている時間も、旅の一部。</p>
+          </div>
+          <div class="takeaway-card reveal">
+            <span class="takeaway-emoji">🧱</span>
+            <h4 class="takeaway-title">レゴブロック的計画</h4>
+            <p class="takeaway-desc">パーツを認識した状態で、組み上げは即興。完全な設計図でも無計画でもない第三の道。</p>
+          </div>
+          <div class="takeaway-card reveal">
+            <span class="takeaway-emoji">🌱</span>
+            <h4 class="takeaway-title">プロトピアという姿勢</h4>
+            <p class="takeaway-desc">ユートピアでもディストピアでもなく、少しずつ良くなっていくプロセスとしての未来。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SPOTIFY PLAYER
+  ========================================== -->
+  <section class="spotify-section">
+    <div class="main-content">
+      <p class="spotify-label reveal">Listen on Spotify</p>
+      <div class="spotify-player reveal">
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/episode/4LGR7doGcyPM6rtEJCzH3o?utm_source=generator&theme=0"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+  <footer class="footer">
+    <p class="footer-logo">Metacreative Radio</p>
+    <p class="footer-meta">Episode 19 | 2026.02.02 | Tamkai & Opi<br>Metacreative Document</p>
+  </footer>
+
+  <!-- ==========================================
+       JAVASCRIPT
+  ========================================== -->
+  <script>
+    (function() {
+      'use strict';
+
+      var supportsScrollTimeline = CSS.supports('animation-timeline', 'view()');
+      var isPC = window.innerWidth >= 1024;
+
+      if (isPC && 'IntersectionObserver' in window) {
+        document.documentElement.classList.add('spotlight-ready');
+        document.documentElement.classList.add('pc-reveal-ready');
+
+        var pcRevealElements = document.querySelectorAll('.reveal');
+        var revealedElements = new Set();
+        var viewportTriggerPoint = 0.7;
+        var initialized = false;
+
+        function initializeVisibility() {
+          if (initialized) return;
+          initialized = true;
+
+          var viewportHeight = window.innerHeight;
+          var triggerLine = viewportHeight * 0.3;
+
+          pcRevealElements.forEach(function(el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < triggerLine) {
+              revealedElements.add(el);
+              el.style.transition = 'none';
+              el.classList.add('pc-revealed');
+              setTimeout(function() {
+                el.style.transition = '';
+              }, 10);
+            }
+          });
+        }
+
+        function checkAndReveal() {
+          var triggerY = window.innerHeight * viewportTriggerPoint;
+
+          pcRevealElements.forEach(function(el) {
+            if (revealedElements.has(el)) return;
+
+            var rect = el.getBoundingClientRect();
+            if (rect.top < triggerY) {
+              revealedElements.add(el);
+
+              var delay = 0;
+              var dialogueBlock = el.closest('.dialogue-block');
+              if (dialogueBlock) {
+                var siblings = Array.from(dialogueBlock.querySelectorAll('.dialogue-item.reveal'));
+                var idx = siblings.indexOf(el);
+                var unrevealedBefore = siblings.slice(0, idx).filter(function(s) {
+                  return !s.classList.contains('pc-revealed');
+                }).length;
+                delay = Math.min(unrevealedBefore * 80, 300);
+              }
+
+              setTimeout(function() {
+                el.classList.add('pc-revealed');
+              }, delay);
+            }
+          });
+        }
+
+        var scrollTicking = false;
+        function onScrollReveal() {
+          if (!scrollTicking) {
+            requestAnimationFrame(function() {
+              checkAndReveal();
+              scrollTicking = false;
+            });
+            scrollTicking = true;
+          }
+        }
+
+        setTimeout(function() {
+          initializeVisibility();
+          window.addEventListener('scroll', onScrollReveal, { passive: true });
+        }, 100);
+
+      } else if (supportsScrollTimeline) {
+        document.documentElement.classList.add('spotlight-ready');
+
+        setTimeout(function() {
+          var hidden = document.querySelectorAll('.reveal');
+          for (var i = 0; i < hidden.length; i++) {
+            var cs = getComputedStyle(hidden[i]);
+            if (parseFloat(cs.opacity) < 0.1 && hidden[i].getBoundingClientRect().top < window.innerHeight) {
+              document.documentElement.classList.remove('spotlight-ready');
+              document.documentElement.classList.add('reveal-ready');
+              hidden[i].classList.add('revealed');
+            }
+          }
+        }, 5000);
+
+      } else if ('IntersectionObserver' in window) {
+        document.documentElement.classList.add('reveal-ready');
+
+        setTimeout(function() {
+          document.querySelectorAll('.reveal:not(.revealed)').forEach(function(el) {
+            el.classList.add('revealed');
+          });
+        }, 4000);
+
+        var revealElements = document.querySelectorAll('.reveal');
+
+        var revealObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var parent = el.parentElement;
+              var delay = 0;
+              if (parent) {
+                var children = parent.children;
+                var revealIndex = 0;
+                for (var i = 0; i < children.length; i++) {
+                  if (children[i] === el) { delay = revealIndex * 80; break; }
+                  if (children[i].classList.contains('reveal')) { revealIndex++; }
+                }
+              }
+              setTimeout(function() {
+                el.classList.add('revealed');
+              }, delay);
+              revealObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(function(el) {
+          revealObserver.observe(el);
+        });
+      }
+
+      // ---- PROGRESS BAR + CHAPTER CONTEXT ----
+      var progressBar = document.getElementById('progressBar');
+      var progressLine = document.getElementById('progressLine');
+      var progressChapterEl = document.getElementById('progressChapter');
+      var heroEl = document.getElementById('hero');
+
+      function updateProgress() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressLine.style.width = Math.min(progress, 100) + '%';
+
+        var heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+        if (scrollTop > heroBottom - 100) {
+          progressBar.classList.add('visible');
+        } else {
+          progressBar.classList.remove('visible');
+        }
+      }
+
+      // ---- ATMOSPHERE SHIFT ----
+      var sections = document.querySelectorAll('[data-atmosphere]');
+      var atmospheres = {
+        'warm':     '#F5F0E8',
+        'cool':     '#F0F2F5',
+        'creative': '#F8F5EE',
+        'deep':     '#F5F0E8'
+      };
+
+      var currentChapterName = '';
+
+      function updateAtmosphere() {
+        var scrollCenter = window.scrollY + window.innerHeight * 0.4;
+        var activeSection = null;
+
+        for (var i = 0; i < sections.length; i++) {
+          var section = sections[i];
+          var rect = section.getBoundingClientRect();
+          var sectionTop = window.scrollY + rect.top;
+          var sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollCenter >= sectionTop && scrollCenter < sectionBottom) {
+            activeSection = section;
+            break;
+          }
+        }
+
+        if (activeSection) {
+          var atm = activeSection.getAttribute('data-atmosphere');
+          if (atm && atmospheres[atm]) {
+            document.body.style.backgroundColor = atmospheres[atm];
+          }
+
+          var chapterName = activeSection.getAttribute('data-chapter-name') || '';
+          if (chapterName !== currentChapterName) {
+            currentChapterName = chapterName;
+            progressChapterEl.style.opacity = '0';
+            setTimeout(function() {
+              progressChapterEl.textContent = currentChapterName;
+              progressChapterEl.style.opacity = '1';
+            }, 200);
+          }
+        }
+      }
+
+      // ---- SIDE TOC ACTIVE TRACKING ----
+      var tocDots = document.querySelectorAll('.toc-dot');
+      var sectionIds = [];
+      for (var i = 0; i < tocDots.length; i++) {
+        sectionIds.push(tocDots[i].getAttribute('data-target'));
+      }
+
+      function updateTocDots() {
+        var scrollCenter = window.scrollY + window.innerHeight * 0.4;
+        var activeId = null;
+
+        for (var j = 0; j < sectionIds.length; j++) {
+          var section = document.getElementById(sectionIds[j]);
+          if (section) {
+            var rect = section.getBoundingClientRect();
+            var sectionTop = window.scrollY + rect.top;
+            var sectionBottom = sectionTop + section.offsetHeight;
+            if (scrollCenter >= sectionTop && scrollCenter < sectionBottom) {
+              activeId = sectionIds[j];
+              break;
+            }
+          }
+        }
+
+        for (var k = 0; k < tocDots.length; k++) {
+          if (tocDots[k].getAttribute('data-target') === activeId) {
+            tocDots[k].classList.add('active');
+          } else {
+            tocDots[k].classList.remove('active');
+          }
+        }
+      }
+
+      // TOC dot click navigation
+      tocDots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var targetId = this.getAttribute('data-target');
+          var targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // ---- ANNOTATION TOGGLE ----
+      document.querySelectorAll('.annotation').forEach(function(ann) {
+        ann.addEventListener('click', function() {
+          this.classList.toggle('expanded');
+        });
+      });
+
+      // ---- SCROLL HANDLER ----
+      var ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            updateProgress();
+            updateAtmosphere();
+            updateTocDots();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      updateProgress();
+      updateAtmosphere();
+      updateTocDots();
+    })();
+  </script>
+</body>
+</html>
