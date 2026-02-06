@@ -332,6 +332,16 @@
       animation: fadeInUp 0.8s var(--ease) 0.2s both;
     }
 
+    .hero-mini-player {
+      max-width: 320px;
+      margin: 0 auto 1.5rem;
+      animation: fadeInUp 0.8s var(--ease) 0.25s both;
+    }
+
+    .hero-mini-player iframe {
+      border-radius: 12px;
+    }
+
     .hero-meta {
       display: flex;
       gap: 2rem;
@@ -341,7 +351,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.05em;
-      animation: fadeInUp 0.8s var(--ease) 0.3s both;
+      animation: fadeInUp 0.8s var(--ease) 0.35s both;
     }
 
     .hero-meta span {
@@ -408,8 +418,8 @@
       .reveal {
         opacity: 0;
         transform: translateY(40px);
-        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: opacity 0.85s ease-out,
+                    transform 0.85s ease-out;
       }
 
       .reveal.pc-revealed {
@@ -473,8 +483,8 @@
       }
 
       html.pc-reveal-ready .reveal {
-        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: opacity 0.85s ease-out,
+                    transform 0.85s ease-out;
       }
 
       html.pc-reveal-ready .reveal {
@@ -484,32 +494,48 @@
 
       html.pc-reveal-ready .chapter-header.reveal {
         transform: scale(0.85) translateY(30px);
-        transition-duration: 0.8s;
+        transition-duration: 0.95s;
       }
 
       html.pc-reveal-ready .section-divider.reveal {
         transform: scaleX(0.3);
-        transition-duration: 0.6s;
+        transition-duration: 0.75s;
       }
 
       html.pc-reveal-ready .concept-diagram.reveal,
       html.pc-reveal-ready .contrast-diagram.reveal {
         transform: scale(0.9);
-        transition-duration: 0.7s;
+        transition-duration: 0.85s;
       }
 
       html.pc-reveal-ready .takeaway-card.reveal {
         transform: scale(0.9) translateY(20px);
-        transition-duration: 0.6s;
+        transition-duration: 0.75s;
+      }
+
+      /* アノテーションは重厚感を出すためにゆっくり */
+      html.pc-reveal-ready .annotation.reveal {
+        transform: translateY(30px);
+        transition-duration: 1.3s;
+        transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
       }
 
       html.pc-reveal-ready .dialogue-item.reveal {
         transform: translateX(-60px);
-        transition-duration: 0.65s;
+        transition-duration: 0.8s;
       }
 
       html.pc-reveal-ready .dialogue-item.reveal:nth-child(even) {
         transform: translateX(60px);
+      }
+
+      /* 地の文と発言の間に「一呼吸」を入れる */
+      html.pc-reveal-ready .guide-text.reveal + .dialogue-block .dialogue-item.reveal {
+        transition-delay: 0.2s;
+      }
+
+      html.pc-reveal-ready .dialogue-block + .guide-text.reveal {
+        transition-delay: 0.18s;
       }
 
       html.pc-reveal-ready .reveal.pc-revealed {
@@ -538,7 +564,7 @@
     html.reveal-ready .reveal {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      transition: opacity 0.85s ease-out, transform 0.85s ease-out;
     }
 
     html.reveal-ready .reveal.revealed {
@@ -1431,6 +1457,17 @@
       <span class="hero-episode">Episode 19</span>
       <h1 class="hero-title">僕らが<span class="accent">旅</span>に出る理由</h1>
       <p class="hero-subtitle">パリの韓国人おばちゃん、名古屋の台湾まぜそば、<br>そしてワカンダの未来学者が教えてくれること</p>
+      <div class="hero-mini-player">
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/episode/4LGR7doGcyPM6rtEJCzH3o?utm_source=generator&theme=0"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
       <div class="hero-meta">
         <span>2026.02.02</span>
         <span>Tamkai & Opi</span>
