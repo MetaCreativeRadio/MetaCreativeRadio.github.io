@@ -463,37 +463,40 @@ Level 3: 全要素 opacity: 1（完全フォールバック = Standard相当）
 
 ---
 
-## 6. 実装状況（rich-ep12-bricolage.html）
+## 6. 実装状況（正式仕様: rich-ep19-travel.html）
 
-### 6.1 v1 → v2 の変更点
+### 6.1 進化の経緯
 
-| 機能 | v1（bricolage-v1.html） | v2（現行プロトタイプ） |
-|-----|------|-------|
-| 出現アニメーション | 10%進入で0.7s fade-in（時間ベース） | スクロール位置ベースのspotlight統合（blur-to-sharp含む） |
-| スポットライト | なし（出現後は常に opacity: 1） | 可読ゾーン30-70%（モバイル）/ 25-75%（PC） |
-| 最小opacity | — | 0.2（モバイル）/ 0.35（PC） |
-| blur | — | 1px（モバイル）/ 0.5px（PC） |
-| 要素間スペーシング | 一律 2rem〜3rem | 3段階リズム（呼吸2rem・間4rem・転7rem） |
-| PC対応 | なし | メディアクエリでパラメータ分岐 |
-| スクロールバー | 表示 | spotlight-ready時は非表示 |
-| 対話スライドイン | 左右交互 30px（時間ベース） | 左右交互 16px（スクロール位置ベース） |
-| 註釈の段階開示 | 60%進入で自動展開 | 維持（変更なし） |
-| atmosphere shift | セクション別の背景色変化 | 維持（変更なし） |
+| 機能 | v1（Ep.12 初期） | v2（Ep.12 調整後） | **正式仕様（Ep.19）** |
+|-----|------|-------|-------|
+| 出現アニメーション | 10%進入で0.7s fade-in | スクロール位置ベースのspotlight統合 | **PC/モバイル完全分岐** |
+| PC版 | なし | なし | **IO 70%トリガー、0.85s base、要素別モーション** |
+| モバイル版 | fade-in | spotlight統合 | **scroll-driven animation** |
+| スポットライト（モバイル） | なし | 可読ゾーン30-70% | 30-70%、opacity 0.2、blur 1px |
+| PC フォールバック | — | — | **opacity 0.35、blur 0.5px、可読ゾーン 25-75%** |
+| 対話スライドイン | 左右交互 30px | 左右交互 16px（モバイル） | **モバイル 16px / PC 60px** |
+| annotation duration | — | — | **1.3s（他の0.85sより重厚）** |
+| breathing delay | — | — | **0.2s / 0.18s** |
+| 註釈の段階開示 | 60%進入で自動展開 | 60%進入で自動展開 | **クリック展開のみ（自動展開廃止）** |
+| ヒーローミニプレーヤー | なし | なし | **Spotify ミニプレーヤー追加** |
+| atmosphere shift | セクション別の背景色変化 | 同左 | 同左（`0.8s` transition） |
 
 ### 6.2 チューニング履歴
 
 | 日付 | 変更 | 理由 |
 |------|------|------|
-| 2026-02-05 初回 | opacity 0.08, blur 2px, sharp zone 40-60% | 初期プロトタイプ |
+| 2026-02-05 初回 | opacity 0.08, blur 2px, sharp zone 40-60% | 初期プロトタイプ（Ep.12） |
 | 2026-02-05 調整 | opacity 0.2, blur 1px, sharp zone 30-70% | ユーザーFB: 「Sharpをもう少し広く」「さりげなさがポイント」 |
 | 同上 | PC: opacity 0.35, blur 0.5px, sharp zone 25-75% | ユーザーFB: 「PCも強調しすぎると違和感」 |
+| 2026-02-07 | PC版: 0.85s base, annotation 1.3s, breathing delay 0.2s/0.18s | **Ep.19で正式仕様化** |
+| 同上 | アノテーション自動展開を廃止、クリック展開のみに | ユーザーFB: 意図しないタイミングで開いてしまう |
+| 同上 | ヒーローミニプレーヤー追加 | Ep.19で導入、正式仕様化 |
 
-### 6.2 維持する既存メカニクス
+### 6.3 維持する既存メカニクス
 
 以下は現行実装が既に効果的であり、変更しない:
 
 - **対話の左右交互スライドイン**: 対話のリズム感に貢献している
-- **註釈の段階開示（collapse → auto-expand）**: 情報の段階的提示として有効
 - **atmosphere shift（背景色変化）**: チャプター間の「転」に相当する機能を果たしている
 - **ヒーローセクション**: 導入演出として完成度が高い
 - **固定ドットTOC**: ナビゲーション機能として維持
@@ -547,8 +550,8 @@ Level 3: 全要素 opacity: 1（完全フォールバック = Standard相当）
 
 ---
 
-**Version**: 1.1
+**Version**: 1.2
 **Created**: 2026-02-05
-**Last Updated**: 2026-02-05（スポットライトパラメータ調整、PC対応追加、チューニング履歴追加）
+**Last Updated**: 2026-02-07（Ep.19正式仕様反映: PC/モバイル分岐アニメーション、annotation クリック展開、ヒーローミニプレーヤー）
 **Author**: tamkai + Claude Code (Creative Director)
-**Related**: [DESIGN_LANGUAGE.md](../DESIGN_LANGUAGE.md), [html-samples/rich-ep12-bricolage.html](../html-samples/rich-ep12-bricolage.html)
+**Related**: [DESIGN_LANGUAGE.md](../DESIGN_LANGUAGE.md), [html-samples/rich-ep19-travel.html](../html-samples/rich-ep19-travel.html)

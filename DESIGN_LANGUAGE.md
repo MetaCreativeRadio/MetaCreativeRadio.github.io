@@ -247,6 +247,8 @@
 
 ## Animation & Transition
 
+### サイトUI共通
+
 | Token | Value | 用途 |
 |-------|-------|------|
 | `duration-fast` | 150ms | ホバー、フォーカス |
@@ -255,11 +257,51 @@
 | `easing-default` | `cubic-bezier(0.4, 0, 0.2, 1)` | 標準 |
 | `easing-spring` | `cubic-bezier(0.34, 1.56, 0.64, 1)` | バウンス |
 
-### ルール
+### サイトUIルール
 - アニメーションは控えめに。「アトリエの朝」は静かな空間
 - ページ読み込み時のフェードインは `duration-slow`、`easing-default`
 - ホバーエフェクトは `duration-fast` のみ
-- スクロールトリガーのアニメーションは最小限（Type Aのリッチ版でのみ検討）
+
+### Rich HTML アニメーション（Ep.19 正式仕様）
+
+PCとモバイルで異なるアニメーション方式を使用する。実装リファレンス: `rich-ep19-travel.html`
+
+#### PC版（1024px以上）: 時間ベース・ワンショット
+
+IntersectionObserver でビューポート 70% 到達時にトリガー。一度表示された要素はそのまま維持。
+
+| 要素 | 初期 transform | duration | easing |
+|------|---------------|----------|--------|
+| デフォルト `.reveal` | `translateY(40px)` | **0.85s** | `ease-out` |
+| `.chapter-header` | `scale(0.85) translateY(30px)` | 0.95s | `ease-out` |
+| `.section-divider` | `scaleX(0.3)` | 0.75s | `ease-out` |
+| `.concept-diagram` / `.contrast-diagram` | `scale(0.9)` | 0.85s | `ease-out` |
+| `.takeaway-card` | `scale(0.9) translateY(20px)` | 0.75s | `ease-out` |
+| `.annotation` | `translateY(30px)` | **1.3s** | `cubic-bezier(0.25, 0.1, 0.25, 1)` |
+| `.dialogue-item`（奇数） | `translateX(-60px)` | 0.8s | `ease-out` |
+| `.dialogue-item`（偶数） | `translateX(60px)` | 0.8s | `ease-out` |
+
+**breathing delay（一呼吸の遅延）**:
+- 導の文 → 対話ブロック最初の発言: **0.2s**
+- 対話ブロック → 次の導の文: **0.18s**
+- ダイアログスタガー: `index × 80ms`（最大 300ms）
+
+#### モバイル版: CSS scroll-driven animation（Spotlight）
+
+`animation-timeline: view()` でスクロール連動。コンテンツの可読性をスクロール位置で制御。
+
+| パラメータ | モバイル | PC（フォールバック参考） |
+|-----------|---------|---------------------|
+| 可読ゾーン | 30%-70% | 25%-75% |
+| 最小 opacity | 0.2 | 0.35 |
+| 最大 blur | 1px | 0.5px |
+| translateY（入場時） | 6px | 4px |
+
+#### アニメーション設計原則
+- **PC版**: 「ダイナミックだが一度きり」
+- **モバイル版**: 「効いているけど気づかない」
+- Atmosphere Shift: `background-color 0.8s` で背景色を滑らかに遷移
+- アノテーションはクリック展開のみ（自動展開はしない）
 
 ---
 
@@ -422,7 +464,86 @@
 
 ---
 
-**Version**: 1.0
+## Hero Color Sets（Rich HTML用）
+
+Rich HTML のヒーローセクションにおいて、エピソードごとのビジュアル差別化を実現するためのカラーセット定義。グロー（背景 radial-gradient）、フローティングシェイプの色・形状、テキストアクセントを連動させて「空気」を変える。
+
+### 設計原則
+
+- **外部アセット不要**: CSSの値を変えるだけで実現。画像や絵文字に頼らない
+- **パレット内で収める**: DESIGN_LANGUAGE のカラーシステム内の色のみ使用
+- **3レイヤー連動**: グロー・シェイプ・アクセントの色を統一して空気感を作る
+
+### カラーセット一覧
+
+#### Default（デフォルト）— gold + sage
+
+現行の標準セット。汎用的に使える。
+
+| レイヤー | 値 |
+|---------|-----|
+| グロー | `gold(0.3)` + `sage(0.25)` + `gold(0.15)` |
+| シェイプ色 | `gold-400`, `sage-400` |
+| シェイプ形状 | 円、45度回転四角、有機形 |
+| hero-label | `gold-400` |
+| .accent gradient | `sage-400 → gold-400` |
+| hero-meta dot | `gold-400` |
+
+#### Intellectual（知的・構造系）— blue + purple
+
+組織論、フレームワーク、分析的なテーマに。
+
+| レイヤー | 値 |
+|---------|-----|
+| グロー | `blue(0.3)` + `purple(0.25)` + `blue(0.15)` |
+| シェイプ色 | `blue-400`, `purple-400` |
+| シェイプ形状 | 円、六角形（clip-path）、角丸四角15度回転、小円 |
+| hero-label | `blue-400` |
+| .accent gradient | `blue-400 → purple-400` |
+| hero-meta dot | `blue-400` |
+
+#### Adventure（冒険・開放系）— gold + blue
+
+旅、探索、外の世界との出会いがテーマに。
+
+| レイヤー | 値 |
+|---------|-----|
+| グロー | `gold(0.3)` + `blue(0.25)` + `gold(0.15)` |
+| シェイプ色 | `gold-400`, `blue-400` |
+| シェイプ形状 | 円、楕円、ゆるいカーブ |
+| hero-label | `gold-400` |
+| .accent gradient | `gold-400 → blue-400` |
+| hero-meta dot | `gold-400` |
+
+#### Warmth（手触り・温かみ系）— sage + rose
+
+手仕事、身体性、人間的な温かさがテーマに。
+
+| レイヤー | 値 |
+|---------|-----|
+| グロー | `sage(0.3)` + `rose(0.25)` + `sage(0.15)` |
+| シェイプ色 | `sage-400`, `rose-400` |
+| シェイプ形状 | 円、有機形、波形 |
+| hero-label | `sage-400` |
+| .accent gradient | `sage-400 → rose-400` |
+| hero-meta dot | `sage-400` |
+
+### 運用ルール
+
+1. **テーマからセットを選ぶ**: エピソードの主題に最も近いカテゴリを選択
+2. **迷ったらDefault**: 複数のテーマが混在する場合は Default を使用
+3. **新セットの追加**: 既存4セットで表現できないテーマが出た場合、Extended Colors（Blue, Purple）の範囲内で新セットを定義可
+4. **本文には影響しない**: ヒーローセクションのみに適用。本文の対話ブロック・註釈・導の文の色は変えない
+
+### 実装リファレンス
+
+- **Default**: [rich-ep19-travel.html](html-samples/rich-ep19-travel.html), [rich-ep12-bricolage.html](html-samples/rich-ep12-bricolage.html)
+- **Intellectual**: [rich-20251129-organizational-creativity.html](html-samples/rich-20251129-organizational-creativity.html)
+
+---
+
+**Version**: 1.1
 **Created**: 2026-02-04
+**Last Updated**: 2026-02-07（Hero Color Sets 追加）
 **Author**: tamkai + Claude Code (Creative Director)
 **North Star**: アトリエの朝
