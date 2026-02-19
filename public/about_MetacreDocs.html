@@ -22,6 +22,54 @@ body{overflow-x:hidden}
 .view-tab:hover:not(.active){color:#6B6560}
 
 /* ========================================
+   ABOUT VIEW — Light Theme
+   ======================================== */
+#view-about{background:#F5F0E8;color:#2C3330;font-family:'Noto Sans JP',sans-serif;line-height:1.85;min-height:100vh;padding-top:52px}
+#view-about .about-hero{text-align:center;padding:6em 2em 3em;max-width:960px;margin:0 auto}
+#view-about .about-kicker{font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#9E9690;margin-bottom:1.5rem}
+#view-about .about-title{font-family:'Noto Serif JP',serif;font-size:2rem;font-weight:700;line-height:1.4;color:#2C3330;margin-bottom:0.6em}
+#view-about .about-lead{font-family:'Noto Serif JP',serif;font-size:1.05rem;color:#6B6560;line-height:1.9;max-width:780px;margin:0 auto 3rem}
+#view-about .about-divider{width:40px;height:2px;background:#C4A057;margin:0 auto 3rem;border-radius:1px}
+/* 3-layer explanation */
+#view-about .about-layers{max-width:860px;margin:0 auto;padding:0 2rem}
+#view-about .about-layers-title{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:600;color:#2C3330;text-align:center;margin-bottom:2rem}
+#view-about .about-layer{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;padding:1.25rem 1.5rem;border-radius:8px;background:#FAF8F5;border:1px solid #E5DFD6}
+#view-about .about-layer-icon{font-size:1.5rem;flex-shrink:0;width:2.5rem;text-align:center;line-height:1.8}
+#view-about .about-layer-body{flex:1}
+#view-about .about-layer-name{font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;color:#2C3330;margin-bottom:0.25rem}
+#view-about .about-layer-desc{font-size:0.875rem;color:#6B6560;line-height:1.75}
+/* Infographic area */
+#view-about .about-infographic{max-width:860px;margin:3rem auto;padding:0 2rem;text-align:center}
+#view-about .about-infographic img{max-width:100%;height:auto;border-radius:12px}
+#view-about .about-infographic:empty{display:none}
+/* Use cases */
+#view-about .about-usecases{max-width:860px;margin:3rem auto;padding:0 2rem}
+#view-about .about-usecases-title{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:600;color:#2C3330;text-align:center;margin-bottom:2rem}
+#view-about .about-usecase-list{display:flex;flex-direction:column;gap:1.25rem}
+#view-about .about-usecase{padding:1.5rem 1.75rem;border-radius:10px;background:#FAF8F5;border:1px solid #E5DFD6;display:flex;gap:1.25rem;align-items:flex-start}
+#view-about .about-usecase-icon{font-size:1.6rem;flex-shrink:0;width:2.5rem;text-align:center;line-height:1.7}
+#view-about .about-usecase-body{flex:1}
+#view-about .about-usecase-name{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:600;color:#2C3330;margin-bottom:0.4rem;line-height:1.4}
+#view-about .about-usecase-desc{font-size:0.875rem;color:#6B6560;line-height:1.85}
+#view-about .about-usecase-highlight{display:inline;color:#2C3330;font-weight:500}
+/* View cards */
+#view-about .about-views{max-width:860px;margin:3rem auto;padding:0 2rem}
+#view-about .about-views-title{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:600;color:#2C3330;text-align:center;margin-bottom:2rem}
+#view-about .about-view-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:640px){#view-about .about-view-cards{grid-template-columns:1fr}}
+#view-about .about-card{padding:1.5rem;border-radius:8px;background:#FAF8F5;border:1px solid #E5DFD6;cursor:pointer;transition:border-color 0.2s,box-shadow 0.2s}
+#view-about .about-card:hover{border-color:#C4A057;box-shadow:0 4px 12px rgba(44,51,48,0.08)}
+#view-about .about-card-emoji{font-size:1.5rem;margin-bottom:0.75rem}
+#view-about .about-card-name{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;color:#2C3330;margin-bottom:0.4rem}
+#view-about .about-card-desc{font-size:0.8rem;color:#6B6560;line-height:1.7}
+/* CTA */
+#view-about .about-cta{text-align:center;margin:3.5rem auto 0;padding:0 2rem}
+#view-about .about-cta-btn{display:inline-block;padding:0.8rem 2.5rem;background:#2C3330;color:#FAF8F5;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.03em;border:none;border-radius:6px;cursor:pointer;transition:background 0.2s}
+#view-about .about-cta-btn:hover{background:#4A524E}
+/* Footer */
+#view-about .about-footer{text-align:center;padding:4rem 2rem 2rem;font-size:0.75rem;color:#9E9690}
+
+/* ========================================
    CONVERSATION VIEW — Light Theme
    ======================================== */
 #view-conversation{background:#F5F0E8;color:#2C3330;font-family:'Noto Sans JP',sans-serif;line-height:1.85;min-height:100vh;padding-top:52px}
@@ -316,14 +364,117 @@ html.r-io-ready #view-rich .r-reveal.io-revealed{opacity:1;transform:none}
 <!-- ===== VIEW SWITCHER ===== -->
 <div class="view-switcher">
 <div class="switcher-inner">
-<button class="view-tab active" data-view="conversation">会話文</button>
+<button class="view-tab active" data-view="about">About</button>
+<button class="view-tab" data-view="conversation">会話文</button>
 <button class="view-tab" data-view="standard">Standard</button>
 <button class="view-tab" data-view="rich">Rich</button>
 </div>
 </div>
 
+<!-- ====== ABOUT VIEW ====== -->
+<div id="view-about" class="view-content active">
+
+<div class="about-hero">
+  <p class="about-kicker">MetaCreative Document</p>
+  <h1 class="about-title">ひとつの対話を、<br>3つの方法で読む</h1>
+  <p class="about-lead">メタクリドキュメントは、対話の中に埋もれた知的資産を掘り起こし、三層構造で再構成するドキュメント形式です。このページでは、タムカイとOpiによる架空対話「メタクリドキュメントとは何か」を、3つの異なる視点から読み比べることができます。</p>
+  <div class="about-divider"></div>
+</div>
+
+<div class="about-layers">
+  <h2 class="about-layers-title">三層構造とは</h2>
+  <div class="about-layer">
+    <div class="about-layer-icon">💬</div>
+    <div class="about-layer-body">
+      <p class="about-layer-name">対話の引用</p>
+      <p class="about-layer-desc">実際の対話から選び抜かれた発言。文脈と温度感を保ったまま、核心的なやりとりを再現する。</p>
+    </div>
+  </div>
+  <div class="about-layer">
+    <div class="about-layer-icon">🖊</div>
+    <div class="about-layer-body">
+      <p class="about-layer-name">地の文（導の文）</p>
+      <p class="about-layer-desc">対話の前後を補い、文脈をつなぎ、読者を導く第三者の視点。映像作品のナレーションに近い役割を果たす。</p>
+    </div>
+  </div>
+  <div class="about-layer">
+    <div class="about-layer-icon">📚</div>
+    <div class="about-layer-body">
+      <p class="about-layer-name">註釈</p>
+      <p class="about-layer-desc">対話の中の何気ない一言を、学術的概念や文化的文脈と接続する知的架橋。対話を「教養」に昇華させる仕掛け。</p>
+    </div>
+  </div>
+</div>
+
+<div class="about-infographic">
+  <img src="AboutMetacreDocs.png" alt="メタクリドキュメントとは — 三層構造の図解">
+</div>
+
+<div class="about-usecases">
+  <h2 class="about-usecases-title">活用事例</h2>
+  <div class="about-usecase-list">
+    <div class="about-usecase">
+      <div class="about-usecase-icon">🗒</div>
+      <div class="about-usecase-body">
+        <p class="about-usecase-name">ミーティング議事録の知的資産化</p>
+        <p class="about-usecase-desc">「何が決まったか」だけの議事録では、<span class="about-usecase-highlight">なぜその結論に至ったのか</span>が消えてしまう。メタクリドキュメントは発言の温度感や思考の分岐点を三層構造で保存し、半年後に読み返しても意思決定の背景が立ち上がる議事録に変える。</p>
+      </div>
+    </div>
+    <div class="about-usecase">
+      <div class="about-usecase-icon">🎙</div>
+      <div class="about-usecase-body">
+        <p class="about-usecase-name">ポッドキャストの知的アーカイブ化</p>
+        <p class="about-usecase-desc">1時間の音声を聴き直すのは大変でも、読み物になっていれば3分で核心に辿り着ける。地の文が対話の流れを案内し、註釈が話題の奥行きを広げることで、<span class="about-usecase-highlight">エピソードが「聴いて終わり」から検索可能な知のアーカイブに変わる。</span></p>
+      </div>
+    </div>
+    <div class="about-usecase">
+      <div class="about-usecase-icon">🎤</div>
+      <div class="about-usecase-body">
+        <p class="about-usecase-name">講演やセミナーのドキュメント化</p>
+        <p class="about-usecase-desc">登壇者の言葉に背景知識と学術的文脈を重ねることで、一度きりのイベントが<span class="about-usecase-highlight">繰り返し読める教材</span>に生まれ変わる。参加者には復習として、不参加者には追体験として届けられる。</p>
+      </div>
+    </div>
+    <div class="about-usecase">
+      <div class="about-usecase-icon">🔬</div>
+      <div class="about-usecase-body">
+        <p class="about-usecase-name">リサーチを経た架空対話による概念探索</p>
+        <p class="about-usecase-desc">論文や書籍のリサーチ結果を、二人の対話として再構成する。抽象的なテーマが具体的な問いと応答の中で立体化され、<span class="about-usecase-highlight">「読む」だけで思考の追体験ができる</span>ドキュメントになる。このページの内容自体が、まさにこの手法で作られている。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-views">
+  <h2 class="about-views-title">3つのビュー</h2>
+  <div class="about-view-cards">
+    <div class="about-card" data-goto="conversation">
+      <div class="about-card-emoji">📝</div>
+      <p class="about-card-name">会話文</p>
+      <p class="about-card-desc">対話そのもの。タムカイとOpiが交わした言葉を、最もシンプルな形で読む。</p>
+    </div>
+    <div class="about-card" data-goto="standard">
+      <div class="about-card-emoji">📖</div>
+      <p class="about-card-name">Standard</p>
+      <p class="about-card-desc">編集された読み物。対話の引用に地の文と註釈が加わり、三層構造で読む。</p>
+    </div>
+    <div class="about-card" data-goto="rich">
+      <div class="about-card-emoji">✨</div>
+      <p class="about-card-name">Rich</p>
+      <p class="about-card-desc">没入型の体験。三層構造をスクロール演出と雰囲気の変化とともに読む。</p>
+    </div>
+  </div>
+</div>
+
+<div class="about-cta">
+  <button class="about-cta-btn" data-goto="conversation">会話文から読み始める</button>
+</div>
+
+<div class="about-footer">MetaCreative Document — 2025</div>
+
+</div>
+
 <!-- ====== CONVERSATION VIEW ====== -->
-<div id="view-conversation" class="view-content active">
+<div id="view-conversation" class="view-content">
 <div class="conv-hero">
 <div class="conv-badge"><span>💬</span><span>架空対話</span></div>
 <h1 class="conv-title">メタクリドキュメントとは何か<br>——誕生、効果、そしてその先へ</h1>
@@ -1218,20 +1369,25 @@ html.r-io-ready #view-rich .r-reveal.io-revealed{opacity:1;transform:none}
 'use strict';
 var tabs=document.querySelectorAll('.view-tab');
 var views=document.querySelectorAll('.view-content');
-var currentView='conversation';
+var currentView='about';
+function switchView(v){
+  if(v===currentView)return;
+  currentView=v;
+  tabs.forEach(function(t){t.classList.remove('active')});
+  var targetTab=document.querySelector('.view-tab[data-view="'+v+'"]');
+  if(targetTab)targetTab.classList.add('active');
+  views.forEach(function(view){view.classList.remove('active')});
+  document.getElementById('view-'+v).classList.add('active');
+  window.scrollTo(0,0);
+  if(v==='standard') initStandard();
+  if(v==='rich') initRich();
+}
 tabs.forEach(function(tab){
-  tab.addEventListener('click',function(){
-    var v=this.getAttribute('data-view');
-    if(v===currentView)return;
-    currentView=v;
-    tabs.forEach(function(t){t.classList.remove('active')});
-    this.classList.add('active');
-    views.forEach(function(view){view.classList.remove('active')});
-    document.getElementById('view-'+v).classList.add('active');
-    window.scrollTo(0,0);
-    if(v==='standard') initStandard();
-    if(v==='rich') initRich();
-  });
+  tab.addEventListener('click',function(){switchView(this.getAttribute('data-view'))});
+});
+/* About: card & CTA click → switch view */
+document.querySelectorAll('[data-goto]').forEach(function(el){
+  el.addEventListener('click',function(){switchView(this.getAttribute('data-goto'))});
 });
 var sInitialized=false;
 function initStandard(){
