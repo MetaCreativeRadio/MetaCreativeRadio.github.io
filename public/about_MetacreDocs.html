@@ -10,7 +10,7 @@
 <style>
 /* ========== RESET ========== */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
+html{font-size:16px}
 body{overflow-x:hidden}
 .view-content{display:none}.view-content.active{display:block}
 
@@ -1387,6 +1387,7 @@ html.r-io-ready #view-rich .r-reveal.io-revealed{opacity:1;transform:none}
 var tabs=document.querySelectorAll('.view-tab');
 var views=document.querySelectorAll('.view-content');
 var currentView='about';
+var rRevealBlocked=false;
 function switchView(v){
   if(v===currentView)return;
   currentView=v;
@@ -1394,10 +1395,16 @@ function switchView(v){
   var targetTab=document.querySelector('.view-tab[data-view="'+v+'"]');
   if(targetTab)targetTab.classList.add('active');
   views.forEach(function(view){view.classList.remove('active')});
-  document.getElementById('view-'+v).classList.add('active');
   window.scrollTo(0,0);
+  document.getElementById('view-'+v).classList.add('active');
   if(v==='standard') initStandard();
-  if(v==='rich'){ resetRichReveals(); initRich(); }
+  if(v==='rich'){
+    rRevealBlocked=true;
+    resetRichReveals();
+    initRich();
+    /* Unblock after all pending scroll/rAF callbacks have flushed */
+    requestAnimationFrame(function(){requestAnimationFrame(function(){rRevealBlocked=false})});
+  }
 }
 function resetRichReveals(){
   document.querySelectorAll('#view-rich .r-reveal').forEach(function(el){
@@ -1488,13 +1495,14 @@ function initRich(){
       document.documentElement.classList.add('r-spotlight-ready');
       var rTicking=false;
       function checkRichReveals(){
+        if(rRevealBlocked)return;
         var triggerLine=window.innerHeight*0.7;
         document.querySelectorAll('#view-rich .r-reveal:not(.pc-revealed)').forEach(function(el){
           if(el.getBoundingClientRect().top<triggerLine)el.classList.add('pc-revealed');
         });
       }
       window.addEventListener('scroll',function(){
-        if(currentView!=='rich')return;
+        if(currentView!=='rich'||rRevealBlocked)return;
         if(!rTicking){requestAnimationFrame(function(){checkRichReveals();rTicking=false});rTicking=true}
       },{passive:true});
     } else if(supportsScrollTimeline){
