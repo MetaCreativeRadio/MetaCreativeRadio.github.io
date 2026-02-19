@@ -41,7 +41,8 @@ body{overflow-x:hidden}
 /* Infographic area */
 #view-about .about-infographic{max-width:860px;margin:3rem auto;padding:0 2rem;text-align:center}
 #view-about .about-infographic img{max-width:100%;height:auto;border-radius:12px}
-#view-about .about-infographic:empty{display:none}
+@media(min-width:768px){#view-about .about-infographic img{max-width:70%}}
+#view-about .about-infographic-caption{font-size:0.85rem;color:#9E9690;line-height:1.8;margin-top:1rem}
 /* Use cases */
 #view-about .about-usecases{max-width:860px;margin:3rem auto;padding:0 2rem}
 #view-about .about-usecases-title{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:600;color:#2C3330;text-align:center;margin-bottom:2rem}
@@ -87,6 +88,11 @@ body{overflow-x:hidden}
 #view-conversation .conv-text{font-size:0.9375rem;line-height:1.85;color:#2C3330}
 #view-conversation .conv-end{text-align:center;padding:3rem 0;font-size:0.85rem;color:#9E9690;font-style:italic}
 #view-conversation .conv-footer{text-align:center;padding:2rem;border-top:1px solid #E5DFD6;font-size:0.8125rem;color:#9E9690}
+/* Next-view navigation (shared style) */
+.next-view-nav{text-align:center;max-width:560px;margin:2rem auto 0;padding:2.5rem 2rem;border-top:1px solid #E5DFD6}
+.next-view-btn{display:inline-block;padding:0.7rem 2rem;background:#2C3330;color:#FAF8F5;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.03em;border:none;border-radius:6px;cursor:pointer;transition:background 0.2s}
+.next-view-btn:hover{background:#4A524E}
+.next-view-desc{font-size:0.8rem;color:#9E9690;line-height:1.75;margin-top:0.75rem}
 
 /* ========================================
    STANDARD VIEW — Light Theme (Design Language v1.0)
@@ -408,6 +414,8 @@ html.r-io-ready #view-rich .r-reveal.io-revealed{opacity:1;transform:none}
 
 <div class="about-infographic">
   <img src="AboutMetacreDocs.png" alt="メタクリドキュメントとは — 三層構造の図解">
+  <p class="about-infographic-caption">AIを活用して内容をグラフィカルにまとめる手法も広がっています。<br>これらは概要を一目でつかむサポートにはなりますが、<br>グラフィックのみで詳細な内容理解は困難だという課題もあります。</p>
+  <p class="about-infographic-caption" style="margin-top:0.5rem">メタクリドキュメントは、このことに対する解決策の1つです。</p>
 </div>
 
 <div class="about-usecases">
@@ -540,6 +548,10 @@ html.r-io-ready #view-rich .r-reveal.io-revealed{opacity:1;transform:none}
 <div class="conv-q"><p class="conv-speaker">タムカイ</p><p class="conv-text">これからもっといろんな人の対話がメタクリドキュメントになっていくと思うので、楽しみですね。</p></div>
 <div class="conv-q opi"><p class="conv-speaker">Opi</p><p class="conv-text">楽しみですね。</p></div>
 <p class="conv-end">（架空対話 了）</p>
+<div class="next-view-nav">
+  <button class="next-view-btn" data-goto="standard">Standard版を読む</button>
+  <p class="next-view-desc">この会話文から生まれたメタクリドキュメントを、三層構造（対話引用・地の文・註釈）のすべてとともに読む。</p>
+</div>
 </div>
 <div class="conv-footer">メタクリドキュメントとは何か — タムカイ × Opi 架空対話<br>2026年2月18日</div>
 </div>
@@ -994,6 +1006,11 @@ html.r-io-ready #view-rich .r-reveal.io-revealed{opacity:1;transform:none}
   </main>
 </div>
 
+<div class="next-view-nav">
+  <button class="next-view-btn" data-goto="rich">Rich版を読む</button>
+  <p class="next-view-desc">同じ内容を、コンテンツ量を凝縮しつつスクロール演出と雰囲気の変化で読書体験を高めた没入型バージョンで読む。</p>
+</div>
+
 <footer class="document-footer">
   <div class="footer-about">
     <strong>About MetaCreative Document</strong>
@@ -1380,7 +1397,19 @@ function switchView(v){
   document.getElementById('view-'+v).classList.add('active');
   window.scrollTo(0,0);
   if(v==='standard') initStandard();
-  if(v==='rich') initRich();
+  if(v==='rich'){ resetRichReveals(); initRich(); }
+}
+function resetRichReveals(){
+  document.querySelectorAll('#view-rich .r-reveal').forEach(function(el){
+    el.classList.remove('pc-revealed','io-revealed');
+    el.style.transition='none';
+    el.style.opacity='';el.style.transform='';el.style.filter='';
+  });
+  /* Force reflow so removed classes take effect before re-enabling transitions */
+  void document.getElementById('view-rich').offsetHeight;
+  setTimeout(function(){
+    document.querySelectorAll('#view-rich .r-reveal').forEach(function(el){el.style.transition=''});
+  },30);
 }
 tabs.forEach(function(tab){
   tab.addEventListener('click',function(){switchView(this.getAttribute('data-view'))});
@@ -1428,98 +1457,100 @@ function initStandard(){
   if(panel)panel.querySelectorAll('a').forEach(function(link){link.addEventListener('click',closeMobileToc)});
 }
 var rInitialized=false;
+var rIsPC=window.innerWidth>=1024;
+var rBranch='none'; /* track which reveal branch is active */
 function initRich(){
-  if(rInitialized)return;rInitialized=true;
-  var isPC=window.innerWidth>=1024;
-  var progressBar=document.querySelector('#view-rich .r-progress');
-  var progressLine=document.querySelector('#view-rich .r-progress-line');
-  var progressCh=document.querySelector('#view-rich .r-progress-ch');
-  var rHero=document.querySelector('#view-rich .r-hero');
-  var rSections=document.querySelectorAll('#view-rich [data-atmosphere]');
-  var rTocDots=document.querySelectorAll('#view-rich .r-toc-dot');
-  var atmospheres={'warm':'#F5F0E8','cool':'#F0F2F5','creative':'#F8F5EE','deep':'#F5F0E8'};
-  var currentChName='';
-  var richEl=document.getElementById('view-rich');
-  /* PC: disable annotation click toggle (always open via CSS) */
-  if(isPC){
-    document.querySelectorAll('#view-rich .r-ann').forEach(function(ann){ann.removeAttribute('onclick')});
-  }
-  rTocDots.forEach(function(d){
-    d.addEventListener('click',function(){
-      var t=document.getElementById(this.getAttribute('data-target'));
-      if(t)t.scrollIntoView({behavior:'smooth'});
+  var isPC=rIsPC;
+  if(!rInitialized){
+    rInitialized=true;
+    var progressBar=document.querySelector('#view-rich .r-progress');
+    var progressLine=document.querySelector('#view-rich .r-progress-line');
+    var progressCh=document.querySelector('#view-rich .r-progress-ch');
+    var rHero=document.querySelector('#view-rich .r-hero');
+    var rSections=document.querySelectorAll('#view-rich [data-atmosphere]');
+    var rTocDots=document.querySelectorAll('#view-rich .r-toc-dot');
+    var atmospheres={'warm':'#F5F0E8','cool':'#F0F2F5','creative':'#F8F5EE','deep':'#F5F0E8'};
+    var currentChName='';
+    var richEl=document.getElementById('view-rich');
+    /* PC: disable annotation click toggle (always open via CSS) */
+    if(isPC){
+      document.querySelectorAll('#view-rich .r-ann').forEach(function(ann){ann.removeAttribute('onclick')});
+    }
+    rTocDots.forEach(function(d){
+      d.addEventListener('click',function(){
+        var t=document.getElementById(this.getAttribute('data-target'));
+        if(t)t.scrollIntoView({behavior:'smooth'});
+      });
     });
-  });
-  var supportsScrollTimeline=CSS.supports('animation-timeline','view()');
-  if(isPC&&'IntersectionObserver' in window){
-    /* Branch 1: PC — JS IntersectionObserver reveal */
-    document.documentElement.classList.add('r-spotlight-ready');
+    var supportsScrollTimeline=CSS.supports('animation-timeline','view()');
+    if(isPC&&'IntersectionObserver' in window){
+      rBranch='pc';
+      document.documentElement.classList.add('r-spotlight-ready');
+      var rTicking=false;
+      function checkRichReveals(){
+        var triggerLine=window.innerHeight*0.7;
+        document.querySelectorAll('#view-rich .r-reveal:not(.pc-revealed)').forEach(function(el){
+          if(el.getBoundingClientRect().top<triggerLine)el.classList.add('pc-revealed');
+        });
+      }
+      window.addEventListener('scroll',function(){
+        if(currentView!=='rich')return;
+        if(!rTicking){requestAnimationFrame(function(){checkRichReveals();rTicking=false});rTicking=true}
+      },{passive:true});
+    } else if(supportsScrollTimeline){
+      rBranch='scroll-timeline';
+      document.documentElement.classList.add('r-spotlight-ready');
+    } else if('IntersectionObserver' in window){
+      rBranch='io';
+      document.documentElement.classList.add('r-io-ready');
+    }
+    function updateRich(){
+      if(currentView!=='rich')return;
+      var scrollTop=window.pageYOffset||document.documentElement.scrollTop;
+      var docHeight=document.documentElement.scrollHeight-window.innerHeight;
+      if(progressLine)progressLine.style.width=(scrollTop/docHeight*100)+'%';
+      if(rHero&&scrollTop>rHero.offsetTop+rHero.offsetHeight-100){if(progressBar)progressBar.classList.add('visible')}
+      else{if(progressBar)progressBar.classList.remove('visible')}
+      var viewportMid=scrollTop+window.innerHeight*0.4;
+      var activeId='';
+      rSections.forEach(function(s){
+        var t=s.offsetTop,b=t+s.offsetHeight;
+        if(viewportMid>=t&&viewportMid<b){
+          activeId=s.id;
+          var atm=s.getAttribute('data-atmosphere');
+          if(atm&&atmospheres[atm])richEl.style.backgroundColor=atmospheres[atm];
+          var cn=s.getAttribute('data-chapter-name')||'';
+          if(cn!==currentChName&&progressCh){
+            progressCh.style.opacity='0';
+            setTimeout(function(){progressCh.textContent=cn;progressCh.style.opacity='1'},200);
+            currentChName=cn;
+          }
+        }
+      });
+      rTocDots.forEach(function(d){d.classList.toggle('active',d.getAttribute('data-target')===activeId)});
+    }
+    var rScrollTicking=false;
+    window.addEventListener('scroll',function(){
+      if(currentView!=='rich')return;
+      if(!rScrollTicking){requestAnimationFrame(function(){updateRich();rScrollTicking=false});rScrollTicking=true}
+    },{passive:true});
+  }
+  /* Every time Rich is entered: kick off reveals from scratch */
+  if(rBranch==='pc'){
     setTimeout(function(){
       var threshold=window.innerHeight*0.3;
       document.querySelectorAll('#view-rich .r-reveal').forEach(function(el){
         var rect=el.getBoundingClientRect();
         if(rect.top<threshold){el.style.transition='none';el.classList.add('pc-revealed');setTimeout(function(){el.style.transition=''},10)}
       });
-    },100);
-    var rTicking=false;
-    function checkRichReveals(){
-      var triggerLine=window.innerHeight*0.7;
-      document.querySelectorAll('#view-rich .r-reveal:not(.pc-revealed)').forEach(function(el){
-        if(el.getBoundingClientRect().top<triggerLine)el.classList.add('pc-revealed');
-      });
-    }
-    window.addEventListener('scroll',function(){
-      if(currentView!=='rich')return;
-      if(!rTicking){requestAnimationFrame(function(){checkRichReveals();rTicking=false});rTicking=true}
-    },{passive:true});
-  } else if(supportsScrollTimeline){
-    /* Branch 2: Mobile with scroll-timeline — CSS handles animation */
-    document.documentElement.classList.add('r-spotlight-ready');
-    setTimeout(function(){
-      document.querySelectorAll('#view-rich .r-reveal').forEach(function(el){
-        if(getComputedStyle(el).opacity==='0'){el.style.opacity='1';el.style.transform='none';el.style.filter='none'}
-      });
-    },5000);
-  } else if('IntersectionObserver' in window){
-    /* Branch 3: Mobile fallback — IO reveal */
-    document.documentElement.classList.add('r-io-ready');
+    },120);
+  } else if(rBranch==='io'){
     var ioObserver=new IntersectionObserver(function(entries){
       entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('io-revealed');ioObserver.unobserve(entry.target)}});
     },{threshold:0.1});
     document.querySelectorAll('#view-rich .r-reveal').forEach(function(el){ioObserver.observe(el)});
     setTimeout(function(){document.querySelectorAll('#view-rich .r-reveal:not(.io-revealed)').forEach(function(el){el.classList.add('io-revealed')})},4000);
   }
-  function updateRich(){
-    if(currentView!=='rich')return;
-    var scrollTop=window.pageYOffset||document.documentElement.scrollTop;
-    var docHeight=document.documentElement.scrollHeight-window.innerHeight;
-    if(progressLine)progressLine.style.width=(scrollTop/docHeight*100)+'%';
-    if(rHero&&scrollTop>rHero.offsetTop+rHero.offsetHeight-100){if(progressBar)progressBar.classList.add('visible')}
-    else{if(progressBar)progressBar.classList.remove('visible')}
-    var viewportMid=scrollTop+window.innerHeight*0.4;
-    var activeId='';
-    rSections.forEach(function(s){
-      var t=s.offsetTop,b=t+s.offsetHeight;
-      if(viewportMid>=t&&viewportMid<b){
-        activeId=s.id;
-        var atm=s.getAttribute('data-atmosphere');
-        if(atm&&atmospheres[atm])richEl.style.backgroundColor=atmospheres[atm];
-        var cn=s.getAttribute('data-chapter-name')||'';
-        if(cn!==currentChName&&progressCh){
-          progressCh.style.opacity='0';
-          setTimeout(function(){progressCh.textContent=cn;progressCh.style.opacity='1'},200);
-          currentChName=cn;
-        }
-      }
-    });
-    rTocDots.forEach(function(d){d.classList.toggle('active',d.getAttribute('data-target')===activeId)});
-  }
-  var rScrollTicking=false;
-  window.addEventListener('scroll',function(){
-    if(currentView!=='rich')return;
-    if(!rScrollTicking){requestAnimationFrame(function(){updateRich();rScrollTicking=false});rScrollTicking=true}
-  },{passive:true});
-  updateRich();
 }
 })();
 </script>
